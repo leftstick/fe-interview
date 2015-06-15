@@ -1,0 +1,43 @@
+{
+  "name": "fe-interview",
+  "description": "Retro ansi terminal for front-end interview questions",
+  "version": "1.0.0",
+  "homepage": "https://github.com/leftstick/fe-interview",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/leftstick/fe-interview"
+  },
+  "author": {
+    "name": "Howard.Zuo",
+    "email": "leftstick@qq.com",
+    "url": "https://github.com/leftstick"
+  },
+  "keywords": [
+    "examination",
+    "front-end"
+  ],
+  "files": [
+    "index.js",
+    "bin"
+  ],
+  "bin": {
+    "fe": "./bin/index.js"
+  },
+  "dependencies": {
+    "lodash": "^3.9.3",
+    "terminal-task-runner": "^1.5.2",
+    "update-notifier": "^0.5.0"
+  },
+  "engine-strict": true,
+  "engines": {
+    "node": ">= 0.11"
+  },
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/leftstick/fe-interview/issues"
+  }
+}
