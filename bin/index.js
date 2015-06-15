@@ -23,7 +23,9 @@ var options = {
     taskDir: path.resolve(__dirname, 'questions'),
     helpFile: path.resolve(__dirname, 'help.txt'),
     version: 'v' + pkg.version,
-    preferenceName: '.fe'
+    preferenceName: '.fe',
+    helpTxt: '帮助',
+    exitTxt: '退出'
 };
 
 TaskRunner.createMenu(options);

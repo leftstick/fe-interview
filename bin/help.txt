@@ -1,0 +1,13 @@
+{yellow}{bold}使用说明：{/bold}{/yellow}
+  
+    1. 使用光标{green}上{/green}/{green}下{/green}键或者{green}j{/green}/{green}k{/green}键选择测试题目
+    2. 按下{green}{bold}回车键{/bold}{/green}选择考试题目
+
+{yellow}{bold}使用该考试工具过程中遇到问题？{/bold}{/yellow}
+    注册{bold}issues{/bold}:
+        {magenta}https://github.com/leftstick/fe-interview/issues{/magenta}
+
+{yellow}{bold}发现bug或者有好的题目想要贡献？{/bold}{/yellow}
+    欢迎到:
+        {magenta}https://github.com/leftstick/fe-interview{/magenta}
+    提交各种pull request。
