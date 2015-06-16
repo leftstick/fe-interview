@@ -2,6 +2,8 @@
   
     1. 使用光标{green}上{/green}/{green}下{/green}键或者{green}j{/green}/{green}k{/green}键选择测试题目
     2. 按下{green}{bold}回车键{/bold}{/green}选择考试题目
+    3. 然后选择{yellow}查看题目描述{/yellow}，查看题目后，当前目录下会生成对应的测试考题文件夹，按照题目要求完成里面的代码
+    4. 最后再次打开测试界面，选择所测试的题目，然后选择{yellow}检验答题结果{/yellow}，查看测试结果
 
 {yellow}{bold}使用该考试工具过程中遇到问题？{/bold}{/yellow}
     注册{bold}issues{/bold}:

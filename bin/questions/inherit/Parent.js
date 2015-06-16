@@ -1,0 +1,12 @@
+'use strict';
+
+/**
+ *  1. 给当前Parent类增加一个原型方法: getName
+ *  2. 在getName方法中，返回Parent自己的名字
+ *
+ **/
+var Parent = function(name) {
+    this.name = name;
+};
+
+module.exports = Parent;
