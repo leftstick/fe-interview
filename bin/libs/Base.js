@@ -10,7 +10,7 @@ var BaseTask = Base.extend({
         var path = require('path');
         var examDir = path.resolve(process.cwd(), this.id);
 
-        if (!fs.existsSync(examDir) || !fs.statSync(examDir).isDirectory()) {
+        if (!this.folderExist(examDir)) {
             fs.mkdirSync(examDir);
         }
 
@@ -35,6 +35,7 @@ var BaseTask = Base.extend({
 
             if (answer.choice === 'description') {
                 utils.printFile(path.resolve(__dirname, '..', 'questions', _this.id, 'desc.txt'));
+                cons();
                 return;
             }
 
@@ -57,6 +58,14 @@ var BaseTask = Base.extend({
         var fs = require('fs');
         fs.createReadStream(src)
             .pipe(fs.createWriteStream(dest));
+    },
+    fileExist: function(path) {
+        var fs = require('fs');
+        return fs.existsSync(path) && fs.statSync(path).isFile();
+    },
+    folderExist: function(path) {
+        var fs = require('fs');
+        return fs.existsSync(path) && fs.statSync(path).isDirectory();
     }
 });
 
