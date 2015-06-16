@@ -26,6 +26,7 @@
   "dependencies": {
     "colors-tmpl": "^1.0.0",
     "lodash": "^3.9.3",
+    "mocha": "^2.2.5",
     "terminal-task-runner": "^1.5.2",
     "update-notifier": "^0.5.0"
   },
