@@ -26,6 +26,6 @@ describe('inherit', function() {
     });
 
     it('Son constructor test', function() {
-        assert.notDeepEqual(new Son('nanfeng', 'child').constructor, new Parent('nanfeng').constructor);
+        assert.notDeepEqual(new Son('nanfeng', 'child').constructor, new Parent('nanfeng').constructor, 'Son类的构造器不能和Parent类的相同');
     });
 });

@@ -15,3 +15,5 @@
     {cyan}console{/cyan}{red}.{/red}{cyan}log{/cyan}({green}isString{/green}({magenta}undefined{/magenta})); {grey}//false{/grey}
     {cyan}console{/cyan}{red}.{/red}{cyan}log{/cyan}({green}isString{/green}({magenta}null{/magenta})); {grey}//false{/grey}
     {cyan}console{/cyan}{red}.{/red}{cyan}log{/cyan}({green}isString{/green}({red}new{/red} String({yellow}'hello'{/yellow}))); {grey}//false{/grey}
+
+    

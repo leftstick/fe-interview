@@ -15,3 +15,4 @@
     5. {green}Son{/green}类的实例可以调用{green}Parent{/green}类的{green}getName{/green}方法，并返回父类的名字
     6. {green}Son{/green}类的构造器不能和{green}Parent{/green}一样
     
+    

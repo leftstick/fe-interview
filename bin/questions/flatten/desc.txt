@@ -12,3 +12,5 @@
     {cyan}var{/cyan} testArr = [{magenta}1{/magenta}, [{magenta}2{/magenta}, [{magenta}3{/magenta}, {magenta}4{/magenta}]], {magenta}5{/magenta}];
     
     {cyan}console{/cyan}{red}.{/red}{cyan}log{/cyan}({green}flatten{/green}(testArr)); {grey}//[1, 2, 3, 4, 5]{/grey}
+
+    
