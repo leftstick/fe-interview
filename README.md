@@ -25,7 +25,11 @@ fe
 
 可以打开如下测试界面：
 
-![](https://raw.githubusercontent.com/leftstick/fe-interview/master/docs/img/preview.png)
+![](https://raw.githubusercontent.com/leftstick/fe-interview/master/docs/img/preview01.png)
+![](https://raw.githubusercontent.com/leftstick/fe-interview/master/docs/img/preview02.png)
+![](https://raw.githubusercontent.com/leftstick/fe-interview/master/docs/img/preview03.png)
+![](https://raw.githubusercontent.com/leftstick/fe-interview/master/docs/img/preview04.png)
+![](https://raw.githubusercontent.com/leftstick/fe-interview/master/docs/img/preview05.png)
 
 按照界面指示，开始愉快的答题吧！
 
