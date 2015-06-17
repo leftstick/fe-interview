@@ -5,7 +5,7 @@ var Base = require('../../libs/Base');
 var Question = Base.extend({
     id: 'flatten',
     name: '请尝试完成一个类似\'_.flatten\'的模块',
-    position: 2,
+    position: 3,
     prepare: function() {
         var path = require('path');
         var index = path.resolve(process.cwd(), this.id, 'index.js');
