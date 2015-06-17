@@ -9,11 +9,11 @@ describe('inherit', function() {
     var Son = require(path.resolve(process.cwd(), 'inherit', 'Son'));
 
     it('Parent has prototype method \'getName\'', function() {
-        assert(typeof Parent.prototype['getName'] === 'function');
+        assert(typeof Parent.prototype.getName === 'function', 'Parent类上没定义原型方法getName');
     });
 
     it('parent.getName return string', function() {
-        assert.equal(new Parent('nanfeng').getName(), 'nanfeng');
+        assert.equal(new Parent('nanfeng').getName(), 'nanfeng', 'Parent实例的getName方法返回值不正确');
     });
 
     it('Son is instance of Parent', function() {
@@ -21,8 +21,8 @@ describe('inherit', function() {
     });
 
     it('Son override getName', function() {
-        assert.equal(new Son('nanfeng', 'child').getChildName(), 'child');
-        assert.equal(new Son('nanfeng', 'child').getName(), 'nanfeng');
+        assert.equal(new Son('nanfeng', 'child').getChildName(), 'child', 'Son类的getChildName方法返回值不正确');
+        assert.equal(new Son('nanfeng', 'child').getName(), 'nanfeng', 'Son类的getName方法返回值不正确');
     });
 
     it('Son constructor test', function() {
