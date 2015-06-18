@@ -15,16 +15,8 @@
  *  console.log(curried(1)(2)); // 3
  *
  **/
-var currying = function(func) {};
+var currying = function(func) {
 
-module.exports = currying;
-
-
-var currying = require('currying');
-
-var add = function(a, b) {
-    return a + b;
 };
 
-var curried = curry(add);
-console.log(curried(1)(2)); // 3
+module.exports = currying;
