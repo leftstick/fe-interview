@@ -3,9 +3,9 @@
 var Base = require('../../libs/Base');
 
 var Question = Base.extend({
-    id: 'duplicate',
-    name: '请尝试完成一个\'duplicate(重复)\'的模块',
-    position: 4,
+    id: 'removeArray',
+    name: '请尝试删除数组的指定下标对应的元素',
+    position: 1,
     prepare: function() {
         var path = require('path');
         var index = path.resolve(process.cwd(), this.id, 'index.js');

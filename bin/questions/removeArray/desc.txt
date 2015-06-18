@@ -1,0 +1,23 @@
+{yellow}{bold}题目要求：{/bold}{/yellow}
+    
+    1. 在当前路径的{magenta}removeArray{/magenta}下，找到{magenta}index.js{/magenta}，并补全实现代码
+    2. 再次执行{cyan}fa{/cyan}，选择该测试题目，然后选择{cyan}检验答题结果{/cyan}
+    3. 检验自己的测试结果
+
+{yellow}{bold}提示：{/bold}{/yellow}
+
+    你的{cyan}removeArray{/cyan}模块应该完成如下功能：
+
+    {cyan}var{/cyan} removeArray {red}={/red} {green}require{/green}({yellow}'removeArray'{/yellow});
+ 
+    {cyan}var{/cyan} arr {red}={/red} [{magenta}1{/magenta}, {magenta}2{/magenta}, {magenta}3{/magenta}, {magenta}4{/magenta}];
+    {green}removeArray{/green}({cyan}arr{/cyan}, {magenta}0{/magenta});
+    {cyan}console{/cyan}{red}.{/red}{cyan}log{/cyan}(arr); {grey}// [2, 3, 4]{/grey}
+  
+    {green}removeArray{/green}({cyan}arr{/cyan}, {magenta}2{/magenta});
+    {cyan}console{/cyan}{red}.{/red}{cyan}log{/cyan}(arr); {grey}// [2, 3]{/grey}
+  
+    {green}removeArray{/green}({cyan}arr{/cyan}, {magenta}3{/magenta});
+    {cyan}console{/cyan}{red}.{/red}{cyan}log{/cyan}(arr); {grey}// [2, 3]{/grey}
+
+    
