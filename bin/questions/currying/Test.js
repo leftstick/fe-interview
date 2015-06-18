@@ -35,4 +35,13 @@ describe('duplicate', function() {
         assert.equal(add(1)(2)(3), 6, '多参数多次柯里化验证失败');
         assert.equal(add(2)(3)(4), 9, '多参数多次柯里化状态分离验证失败');
     });
+
+    it('doesn\'t share state between while currying used mutliple times later on', function() {
+        var add = currying(function(a, b, c, d) {
+            return a + b + c + d;
+        });
+        var a11 = add(1);
+        assert.equal(a11(2)(3)(4), 10, '多参数多次柯里化验证失败');
+        assert.equal(a11(2, 3, 4), 10, '多参数多次柯里化复用验证失败');
+    });
 });
