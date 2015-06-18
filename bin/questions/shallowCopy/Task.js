@@ -5,7 +5,7 @@ var Base = require('../../libs/Base');
 var Question = Base.extend({
     id: 'shallowCopy',
     name: '请尝试完成可以浅拷贝的模块',
-    position: 3,
+    position: 4,
     prepare: function() {
         var path = require('path');
         var index = path.resolve(process.cwd(), this.id, 'index.js');

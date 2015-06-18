@@ -1,0 +1,20 @@
+{yellow}{bold}题目要求：{/bold}{/yellow}
+    
+    1. 在当前路径的{magenta}currying{/magenta}下，找到{magenta}index.js{/magenta}，并补全实现代码
+    2. 再次执行{cyan}fa{/cyan}，选择该测试题目，然后选择{cyan}检验答题结果{/cyan}
+    3. 检验自己的测试结果
+
+{yellow}{bold}提示：{/bold}{/yellow}
+
+    你的{cyan}currying{/cyan}模块应该完成如下功能：
+
+    {cyan}var{/cyan} currying {red}={/red} {green}require{/green}({yellow}'currying'{/yellow});
+
+    {cyan}var{/cyan} {green}add{/green} {red}={/red} {cyan}function{/cyan}({yellow}a{/yellow}, {yellow}b{/yellow}) {
+        {red}return{/red} a {red}+{/red} b;
+    };
+
+    {cyan}var{/cyan} curried {red}={/red} {green}curry{green/}(add);
+    {cyan}console{/cyan}{red}.{/red}{cyan}log{/cyan}({green}curried{/green}({magenta}1{/magenta})({magenta}2{/magenta})); {grey}// 3{/grey}
+
+    
