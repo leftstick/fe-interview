@@ -3,7 +3,7 @@
 /**
  *
  *  该模块必须完成以下功能：
- *  
+ *
  *  var removeArray = require('removeArray');
  *
  *  var arr = [1, 2, 3, 4];
@@ -17,8 +17,8 @@
  *  console.log(arr); // [2, 3]
  *
  **/
-var removeArray = function(arr) {
-
+var removeArray = function(arr, index) {
+    //在这里实现
 };
 
 module.exports = removeArray;

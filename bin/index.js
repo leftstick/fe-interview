@@ -25,7 +25,8 @@ var options = {
     version: 'v' + pkg.version,
     preferenceName: '.fe',
     helpTxt: '帮助',
-    exitTxt: '退出'
+    exitTxt: '退出',
+    onFinish: function() {}
 };
 
 TaskRunner.createMenu(options);
