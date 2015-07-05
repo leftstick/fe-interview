@@ -18,18 +18,27 @@ var BaseTask = Base.extend({
 
         var _this = this;
 
-        this.prompt([{
-            type: 'list',
-            name: 'choice',
-            message: '选择执行项',
-            choices: [{
-                name: '查看题目描述',
-                value: 'description'
-            }, {
-                name: '检验答题结果',
-                value: 'result'
-            }]
-        }], function(answer) {
+        this.prompt([
+            {
+                type: 'list',
+                name: 'choice',
+                message: '选择执行项',
+                choices: [
+                    {
+                        name: '查看题目描述',
+                        value: 'description'
+                    },
+                    {
+                        name: '查看测试用例',
+                        value: 'test'
+                    },
+                    {
+                        name: '检验答题结果',
+                        value: 'result'
+                    }
+                ]
+            }
+        ], function(answer) {
 
             var utils = require('./Utils');
 
@@ -39,10 +48,17 @@ var BaseTask = Base.extend({
                 return;
             }
 
+            if (answer.choice === 'test') {
+                if (!_this.fileExist(path.resolve(process.cwd(), _this.id, 'Test.js'))) {
+                    _this.copyFile(path.resolve(__dirname, '..', 'questions', _this.id, 'Test.js'), path.resolve(process.cwd(), _this.id, 'Test.js'));
+                }
+                TaskRunner.logger.info('测试用例已放置在"./' + _this.id + '/Test.js"，请用个人偏好的IDE查看即可');
+                cons();
+                return;
+            }
+
             var Mocha = require('mocha');
-            var mocha = new Mocha({
-                reporter: 'nyan'
-            });
+            var mocha = new Mocha({reporter: 'nyan'});
             mocha.addFile(path.resolve(__dirname, '..', 'questions', _this.id, 'Test.js'));
 
             mocha.run(function(failures) {
