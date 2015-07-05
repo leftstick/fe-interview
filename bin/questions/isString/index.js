@@ -3,7 +3,7 @@
 /**
  *
  *  尝试完成如下功能：
- *  
+ *
  *  isString('hello')              = true
  *  isString(123)                  = false
  *  isString(undefined)            = false
@@ -12,6 +12,8 @@
  *
  *
  **/
-var isString = function(value) {};
+var isString = function(value) {
+    //在这里实现
+};
 
 module.exports = isString;

@@ -1,7 +1,7 @@
 {yellow}{bold}题目要求：{/bold}{/yellow}
-    
+
     1. 在当前路径的{magenta}flatten{/magenta}下，找到{magenta}index.js{/magenta}，并补全实现代码
-    2. 再次执行{cyan}fa{/cyan}，选择该测试题目，然后选择{cyan}检验答题结果{/cyan}
+    2. 再次执行{cyan}fe{/cyan}，选择该测试题目，然后选择{cyan}检验答题结果{/cyan}
     3. 检验自己的测试结果
 
 {yellow}{bold}提示：{/bold}{/yellow}
@@ -10,7 +10,5 @@
 
     {cyan}var{/cyan} flatten = {green}require{/green}({yellow}'flatten'{/yellow});
     {cyan}var{/cyan} testArr = [{magenta}1{/magenta}, [{magenta}2{/magenta}, [{magenta}3{/magenta}, {magenta}4{/magenta}]], {magenta}5{/magenta}];
-    
-    {cyan}console{/cyan}{red}.{/red}{cyan}log{/cyan}({green}flatten{/green}(testArr)); {grey}//[1, 2, 3, 4, 5]{/grey}
 
-    
+    {cyan}console{/cyan}{red}.{/red}{cyan}log{/cyan}({green}flatten{/green}(testArr)); {grey}//[1, 2, 3, 4, 5]{/grey}

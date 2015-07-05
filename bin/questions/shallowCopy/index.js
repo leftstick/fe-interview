@@ -3,7 +3,7 @@
 /**
  *
  *  尝试完成如下功能：
- *  
+ *
  *  shallowCopy([1, 2, 3])                      = [1, 2, 3]
  *  shallowCopy({ name: 'hello', value: 23 })   = { name: 'hello', value: 23 }
  *
@@ -14,6 +14,8 @@
  *
  *
  **/
-var shallowCopy = function(value) {};
+var shallowCopy = function(value) {
+    //在这里实现
+};
 
 module.exports = shallowCopy;

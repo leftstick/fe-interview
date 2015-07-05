@@ -1,0 +1,25 @@
+{yellow}{bold}题目要求：{/bold}{/yellow}
+
+    1. 在当前路径的{magenta}map{/magenta}下，找到{magenta}index.js{/magenta}，并补全实现代码
+    2. 再次执行{cyan}fe{/cyan}，选择该测试题目，然后选择{cyan}检验答题结果{/cyan}
+    3. 检验自己的测试结果
+
+{yellow}{bold}提示：{/bold}{/yellow}
+
+    你的{cyan}map{/cyan}模块应该完成如下功能：
+
+    {cyan}var{/cyan} map {red}={/red} {green}require{/green}({yellow}'map'{/yellow});
+
+    {cyan}var{/cyan} test1 {red}={/red} [{magenta}1{/magenta}, {magenta}2{/magenta}];
+    {cyan}var{/cyan} map1 {red}={/red} {green}map{/green}(test1, {cyan}function{/cyan}({yellow}i{/yellow}){
+        {red}return{/red} i {red}+{/red} 1;
+    });
+
+    {cyan}console{/cyan}{red}.{/red}{cyan}log{/cyan}(map1); {gray}//[2, 3]{/gray}
+
+    {cyan}var{/cyan} test2 {red}={/red} [{name: {yellow}'nan'{/yellow}, age: {red}25{/red}}, {name: {yellow}'bei'{/yellow}, age: {red}33{/red}}];
+    {cyan}var{/cyan} map2 {red}={/red} {green}map{/green}(test2, {cyan}function{/cyan}({yellow}i{/yellow}){
+        {red}return{/red} i{red}.{/red}{cyan}age{/cyan} {red}*{/red} {magenta}this{/magenta};
+    }, 5);
+
+    {cyan}console{/cyan}{red}.{/red}{cyan}log{/cyan}(map2); {gray}//[125, 165]{/gray}

@@ -10,7 +10,7 @@
 var Parent = require('./Parent');
 
 var Son = function(parentName) {
-
+    //在这里实现
 };
 
 module.exports = Son;
