@@ -6,6 +6,7 @@ var path = require('path');
 var TaskRunner = require('terminal-task-runner');
 var updateNotifier = require('update-notifier');
 var pkg = require('../package.json');
+var commanderRunner = require('./libs/CommanderRunner');
 
 // Checks for available update and returns an instance
 var notifier = updateNotifier({
@@ -16,6 +17,13 @@ var notifier = updateNotifier({
 
 notifier.notify();
 
+
+var program = require('commander');
+
+program
+    .version(pkg.version)
+    .option('-c, --cli [boolean]', '通过命令行启动考核程序(非retro界面)')
+    .parse(process.argv);
 
 var options = {
     title: '前端工程师考核',
@@ -29,4 +37,10 @@ var options = {
     onFinish: function() {}
 };
 
-TaskRunner.createMenu(options);
+if (!program.cli) {
+
+    TaskRunner.createMenu(options);
+
+} else {
+    commanderRunner(options);
+}
