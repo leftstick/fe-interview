@@ -6,12 +6,12 @@ var fs = require('fs');
 
 var CommanderRunner = function(options) {
 
-    return promiseify(fs.readdir)(taskDir.taskDir)
+    return promiseify(fs.readdir)(options.taskDir)
         .then(function(files) {
             return files.map(function(file) {
-                var cls = require(taskDir.taskDir + '/' + file + '/Task');
+                var cls = require(options.taskDir + '/' + file + '/Task');
                 return new cls({
-                    path: taskDir.taskDir + '/' + file + '/Task',
+                    path: options.taskDir + '/' + file + '/Task',
                     preferenceName: options.preferenceName
                 });
             });
