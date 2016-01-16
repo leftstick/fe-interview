@@ -1,22 +1,16 @@
 'use strict';
 var fs = require('fs');
-var colorsTmpl = require('colors-tmpl');
+var marked = require('marked');
+var TerminalRenderer = require('marked-terminal');
+
+marked.setOptions({renderer: new TerminalRenderer()});
 
 var Utils = {
-    printFile: function(filePath) {
-        var contents;
-        try {
-            contents = fs.readFileSync(filePath, {
-                encoding: 'utf8'
-            });
+    printCode: function(filePath) {
 
-            contents = colorsTmpl(contents);
-
-            console.log(contents);
-        } catch (e) {
-            throw e;
-        }
-
+        console.log(marked(fs.readFileSync(filePath, {
+            encoding: 'utf8'
+        })));
     }
 };
 

@@ -1,0 +1,28 @@
+## 题目要求
+
+* 在当前路径的reduce下，找到index.js，并补全实现代码
+* 再次执行fe，选择该测试题目，然后选择"检验答题结果"
+* 检验自己的测试结果
+
+## 提示：
+### 你的reduce模块应该完成如下功能：
+
+```javascript
+var reduce = require('reduce');
+
+var test1 = [1, 2];
+
+var reduce1 = reduce(test1, function(previous, i) {
+    return previous + i;
+});
+
+console.log(reduce1); //3
+
+var test2 = [{name: 'nan',age: 25}, {name: 'bei',age: 33}];
+
+var reduce2 = reduce(test2, function(previous, i) {
+    return previous + i.name + ' ';
+}, 'Hello ');
+
+console.log(reduce2); //Hello nan bei 
+```

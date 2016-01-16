@@ -43,7 +43,7 @@ var BaseTask = Base.extend({
             var utils = require('./Utils');
 
             if (answer.choice === 'description') {
-                utils.printFile(path.resolve(__dirname, '..', 'questions', _this.id, 'desc.txt'));
+                utils.printCode(path.resolve(__dirname, '..', 'questions', _this.id, 'desc.txt'));
                 cons();
                 return;
             }
