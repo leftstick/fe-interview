@@ -1,16 +1,15 @@
-{yellow}{bold}题目要求：{/bold}{/yellow}
+## 题目要求：
 
-    1. 在当前路径的{magenta}inherit{/magenta}下，找到{magenta}Parent.js{/magenta}和{magenta}Son.js{/magenta}，并补全实现代码
-    2. 再次执行{cyan}fe{/cyan}，选择该测试题目，然后选择{cyan}检验答题结果{/cyan}
-    3. 检验自己的测试结果
+* 在当前路径的`inherit`下，找到`Parent.js`和`Son.js`，并补全实现代码
+* 再次执行`fe`，选择该测试题目，然后选择"检验答题结果"
+* 检验自己的测试结果
 
-{yellow}{bold}提示：{/bold}{/yellow}
+## 提示：
+## 你的`inherit`模块应该完成如下功能：
 
-    你的{cyan}inherit{/cyan}模块应该完成如下功能：
-
-    1. 为{green}Parent{/green}类实现一个原型方法{green}getName{/green}
-    2. {green}Parent{/green}类的原型方法{green}getName{/green}必须返回自己的名字
-    3. {green}Son{/green}类必须是{green}Parent{/green}的子类
-    4. {green}Son{/green}类实现一个原型方法{green}getChildName{/green}，并返回自己的名字
-    5. {green}Son{/green}类的实例可以调用{green}Parent{/green}类的{green}getName{/green}方法，并返回父类的名字
-    6. {green}Son{/green}类的构造器不能和{green}Parent{/green}一样
+1. 为`Parent`类实现一个原型方法`getName`
+2. `Parent`类的原型方法`getName`必须返回自己的名字
+3. `Son`类必须是`Parent`的子类
+4. `Son`类实现一个原型方法`getChildName`，并返回自己的名字
+5. `Son`类的实例可以调用`Parent`类的`getName`方法，并返回父类的名字
+6. `Son`类的构造器不能和`Parent`一样

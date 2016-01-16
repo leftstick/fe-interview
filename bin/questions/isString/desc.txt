@@ -1,17 +1,18 @@
-{yellow}{bold}题目要求：{/bold}{/yellow}
+## 题目要求：
 
-    1. 在当前路径的{magenta}isString{/magenta}下，找到{magenta}index.js{/magenta}，并补全实现代码
-    2. 再次执行{cyan}fe{/cyan}，选择该测试题目，然后选择{cyan}检验答题结果{/cyan}
-    3. 检验自己的测试结果
+* 在当前路径的`isString`下，找到`index.js`，并补全实现代码
+* 再次执行`fe`，选择该测试题目，然后选择"检验答题结果"
+* 检验自己的测试结果
 
-{yellow}{bold}提示：{/bold}{/yellow}
+## 提示：
+### 你的`isString`模块应该完成如下功能：
 
-    你的{cyan}isString{/cyan}模块应该完成如下功能：
+```javascript
+var isString = require('isString');
 
-    {cyan}var{/cyan} isString = {green}require{/green}({yellow}'isString'{/yellow});
-
-    {cyan}console{/cyan}{red}.{/red}{cyan}log{/cyan}({green}isString{/green}({yellow}'hello'{/yellow})); {grey}//true{/grey}
-    {cyan}console{/cyan}{red}.{/red}{cyan}log{/cyan}({green}isString{/green}({magenta}3456{/magenta})); {grey}//false{/grey}
-    {cyan}console{/cyan}{red}.{/red}{cyan}log{/cyan}({green}isString{/green}({magenta}undefined{/magenta})); {grey}//false{/grey}
-    {cyan}console{/cyan}{red}.{/red}{cyan}log{/cyan}({green}isString{/green}({magenta}null{/magenta})); {grey}//false{/grey}
-    {cyan}console{/cyan}{red}.{/red}{cyan}log{/cyan}({green}isString{/green}({red}new{/red} String({yellow}'hello'{/yellow}))); {grey}//true{/grey}
+console.log(isString('hello')); //true
+console.log(isString(3456)); //false
+console.log(isString(undefined)); //false
+console.log(isString(null)); //false
+console.log(isString(new String('hello'))); //true
+```

@@ -1,18 +1,19 @@
-{yellow}{bold}题目要求：{/bold}{/yellow}
+## 题目要求：
 
-    1. 在当前路径的{magenta}currying{/magenta}下，找到{magenta}index.js{/magenta}，并补全实现代码
-    2. 再次执行{cyan}fe{/cyan}，选择该测试题目，然后选择{cyan}检验答题结果{/cyan}
-    3. 检验自己的测试结果
+* 在当前路径的`currying`下，找到`index.js`，并补全实现代码
+* 再次执行`fe`，选择该测试题目，然后选择"检验答题结果"
+* 检验自己的测试结果
 
-{yellow}{bold}提示：{/bold}{/yellow}
+## 提示：
+### 你的`currying`模块应该完成如下功能：
 
-    你的{cyan}currying{/cyan}模块应该完成如下功能：
+```javascript
+var currying = require('currying');
 
-    {cyan}var{/cyan} currying {red}={/red} {green}require{/green}({yellow}'currying'{/yellow});
+var add = function(a, b) {
+    return a + b;
+};
 
-    {cyan}var{/cyan} {green}add{/green} {red}={/red} {cyan}function{/cyan}({yellow}a{/yellow}, {yellow}b{/yellow}) {
-        {red}return{/red} a {red}+{/red} b;
-    };
-
-    {cyan}var{/cyan} curried {red}={/red} {green}curry{/green}(add);
-    {cyan}console{/cyan}{red}.{/red}{cyan}log{/cyan}({green}curried{/green}({magenta}1{/magenta})({magenta}2{/magenta})); {grey}// 3{/grey}
+var curried = curry(add);
+console.log(curried(1)(2));//3
+```

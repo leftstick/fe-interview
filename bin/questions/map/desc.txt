@@ -1,25 +1,26 @@
-{yellow}{bold}题目要求：{/bold}{/yellow}
+## 题目要求：
 
-    1. 在当前路径的{magenta}map{/magenta}下，找到{magenta}index.js{/magenta}，并补全实现代码
-    2. 再次执行{cyan}fe{/cyan}，选择该测试题目，然后选择{cyan}检验答题结果{/cyan}
-    3. 检验自己的测试结果
+* 在当前路径的`map`下，找到`index.js`，并补全实现代码
+* 再次执行`fe`，选择该测试题目，然后选择"检验答题结果"
+* 检验自己的测试结果
 
-{yellow}{bold}提示：{/bold}{/yellow}
+## 提示：
+### 你的`map`模块应该完成如下功能：
 
-    你的{cyan}map{/cyan}模块应该完成如下功能：
+```javascript
+var map = require('map');
 
-    {cyan}var{/cyan} map {red}={/red} {green}require{/green}({yellow}'map'{/yellow});
+var test1 = [1, 2];
+var map1 = map(test1, function(i){
+    return i + 1;
+});
 
-    {cyan}var{/cyan} test1 {red}={/red} [{magenta}1{/magenta}, {magenta}2{/magenta}];
-    {cyan}var{/cyan} map1 {red}={/red} {green}map{/green}(test1, {cyan}function{/cyan}({yellow}i{/yellow}){
-        {red}return{/red} i {red}+{/red} 1;
-    });
+console.log(map1); //[2, 3]
 
-    {cyan}console{/cyan}{red}.{/red}{cyan}log{/cyan}(map1); {gray}//[2, 3]{/gray}
+var test2 = [{name: 'nan', age: 25}, {name: 'bei', age: 33}];
+var map2 = map(test2, function(i){
+    return i.age * this;
+}, 5);
 
-    {cyan}var{/cyan} test2 {red}={/red} [{name: {yellow}'nan'{/yellow}, age: {red}25{/red}}, {name: {yellow}'bei'{/yellow}, age: {red}33{/red}}];
-    {cyan}var{/cyan} map2 {red}={/red} {green}map{/green}(test2, {cyan}function{/cyan}({yellow}i{/yellow}){
-        {red}return{/red} i{red}.{/red}{cyan}age{/cyan} {red}*{/red} {magenta}this{/magenta};
-    }, 5);
-
-    {cyan}console{/cyan}{red}.{/red}{cyan}log{/cyan}(map2); {gray}//[125, 165]{/gray}
+console.log(map2); //[125, 165]
+```

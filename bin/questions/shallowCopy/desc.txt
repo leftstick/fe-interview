@@ -1,19 +1,20 @@
-{yellow}{bold}题目要求：{/bold}{/yellow}
+## 题目要求：
 
-    1. 在当前路径的{magenta}shallowCopy{/magenta}下，找到{magenta}index.js{/magenta}，并补全实现代码
-    2. 再次执行{cyan}fe{/cyan}，选择该测试题目，然后选择{cyan}检验答题结果{/cyan}
-    3. 检验自己的测试结果
+* 在当前路径的`shallowCopy`下，找到`index.js`，并补全实现代码
+* 再次执行`fe`，选择该测试题目，然后选择"检验答题结果"
+* 检验自己的测试结果
 
-{yellow}{bold}提示：{/bold}{/yellow}
+## 提示：
+### 你的`shallowCopy`模块应该完成如下功能：
 
-    你的{cyan}shallowCopy{/cyan}模块应该完成如下功能：
+```javascript
+var shallowCopy = require('shallowCopy');
 
-    {cyan}var{/cyan} shallowCopy = {green}require{/green}({yellow}'shallowCopy'{/yellow});
+console.log(shallowCopy([1, 2, 3])); //[1, 2, 3]
+console.log(shallowCopy({ name: 'hello', value: 23 })); //{ name: 'hello', value: 23 }
 
-    {cyan}console{/cyan}{red}.{/red}{cyan}log{/cyan}({green}shallowCopy{/green}([{magenta}1{/magenta}, {magenta}2{/magenta}, {magenta}3{/magenta}])); {grey}//[1, 2, 3]{/grey}
-    {cyan}console{/cyan}{red}.{/red}{cyan}log{/cyan}({green}shallowCopy{/green}({ name: {yellow}'hello'{/yellow}, value: {magenta}23{/magenta} })); {grey}//{ name: 'hello', value: 23 }{/grey}
-
-    {cyan}var{/cyan} value {red}={/red} [{ name: {yellow}'hello'{/yellow}, value: {magenta}23{/magenta} }];
-    {cyan}var{/cyan} copied {red}={/red} {green}shallowCopy{/green}(value);
-    copied[{magenta}0{/magenta}].{cyan}name{/cyan} {red}={/red} {yellow}'world'{/yellow};
-    {cyan}console{/cyan}{red}.{/red}{cyan}log{/cyan}(value[{magenta}0{/magenta}].{cyan}name{/cyan}); {grey}//world{/grey}
+var value = [{ name: 'hello', value: 23 }];
+var copied = shallowCopy(value);
+copied[0].name = 'world';
+console.log(value[0].name); //world
+```
