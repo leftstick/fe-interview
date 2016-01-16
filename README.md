@@ -4,6 +4,8 @@ fe-interview
 
 [![NPM version][npm-image]][npm-url]
 ![][david-url]
+![][dt-url]
+![][license-url]
 
 所谓前端工程师机试工具，希望各公司负责面试的同事能依照国内实际情况给予`pull request`。
 
@@ -50,3 +52,5 @@ fe
 [npm-url]: https://npmjs.org/package/fe-interview
 [npm-image]: https://badge.fury.io/js/fe-interview.png
 [david-url]: https://david-dm.org/leftstick/fe-interview.png
+[dt-url]:https://img.shields.io/npm/dt/fe-interview.svg
+[license-url]:https://img.shields.io/npm/l/fe-interview.svg
