@@ -43,14 +43,14 @@ var BaseTask = Base.extend({
             var utils = require('./Utils');
 
             if (answer.choice === 'description') {
-                utils.printCode(path.resolve(__dirname, '..', 'questions', _this.id, 'desc.txt'));
+                utils.printCode(path.resolve(__dirname, '..', 'questions', _this.position + '_' + _this.id, 'desc.txt'));
                 cons();
                 return;
             }
 
             if (answer.choice === 'test') {
                 if (!_this.fileExist(path.resolve(process.cwd(), _this.id, 'Test.js'))) {
-                    _this.copyFile(path.resolve(__dirname, '..', 'questions', _this.id, 'Test.js'), path.resolve(process.cwd(), _this.id, 'Test.js'));
+                    _this.copyFile(path.resolve(__dirname, '..', 'questions', _this.position + '_' + _this.id, 'Test.js'), path.resolve(process.cwd(), _this.id, 'Test.js'));
                 }
                 TaskRunner.logger.info('测试用例已放置在"./' + _this.id + '/Test.js"，请用个人偏好的IDE查看即可');
                 cons();
@@ -59,7 +59,7 @@ var BaseTask = Base.extend({
 
             var Mocha = require('mocha');
             var mocha = new Mocha({reporter: 'nyan'});
-            mocha.addFile(path.resolve(__dirname, '..', 'questions', _this.id, 'Test.js'));
+            mocha.addFile(path.resolve(__dirname, '..', 'questions', _this.position + '_' + _this.id, 'Test.js'));
 
             mocha.run(function(failures) {
                 cons(failures);
