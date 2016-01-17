@@ -34,6 +34,7 @@ var options = {
     preferenceName: '.fe',
     helpTxt: '帮助',
     exitTxt: '退出',
+    width: 65,
     onFinish: function() {}
 };
 
