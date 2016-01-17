@@ -5,7 +5,6 @@ var Base = require('../../libs/Base');
 var Question = Base.extend({
     id: 'inherit',
     name: '请尝试完成一个\'继承\'的实现',
-    position: 7,
     prepare: function() {
         var path = require('path');
         var parent = path.resolve(process.cwd(), this.id, 'Parent.js');

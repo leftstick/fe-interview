@@ -1,13 +1,19 @@
 'use strict';
 
+var fs = require('fs');
+var path = require('path');
 var TaskRunner = require('terminal-task-runner');
 var Base = TaskRunner.Base;
 
+var findQuestion = function(id) {
+    var dirs = fs.readdirSync(path.resolve(__dirname, '..', 'questions'));
+    return dirs.find(function(dir) {
+        return dir.substring(3) === id;
+    });
+};
+
 var BaseTask = Base.extend({
     run: function(cons) {
-
-        var fs = require('fs');
-        var path = require('path');
         var examDir = path.resolve(process.cwd(), this.id);
 
         if (!this.folderExist(examDir)) {
@@ -43,7 +49,8 @@ var BaseTask = Base.extend({
             var utils = require('./Utils');
 
             if (answer.choice === 'description') {
-                utils.printCode(path.resolve(__dirname, '..', 'questions', _this.position + '_' + _this.id, 'desc.txt'));
+                var question = findQuestion(_this.id);
+                utils.printCode(path.resolve(__dirname, '..', 'questions', question, 'desc.txt'));
                 cons();
                 return;
             }
@@ -59,7 +66,7 @@ var BaseTask = Base.extend({
 
             var Mocha = require('mocha');
             var mocha = new Mocha({reporter: 'nyan'});
-            mocha.addFile(path.resolve(__dirname, '..', 'questions', _this.position + '_' + _this.id, 'Test.js'));
+            mocha.addFile(path.resolve(__dirname, '..', 'questions', findQuestion(_this.id), 'Test.js'));
 
             mocha.run(function(failures) {
                 cons(failures);

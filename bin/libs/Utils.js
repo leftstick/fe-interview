@@ -1,17 +1,7 @@
 'use strict';
 var fs = require('fs');
-var marked = require('marked');
-var TerminalRenderer = require('marked-terminal');
+var printFile = require('terminal-task-runner').printFile;
 
-marked.setOptions({renderer: new TerminalRenderer()});
-
-var Utils = {
-    printCode: function(filePath) {
-
-        console.log(marked(fs.readFileSync(filePath, {
-            encoding: 'utf8'
-        })));
-    }
-};
+var Utils = {printCode: printFile};
 
 module.exports = Utils;
