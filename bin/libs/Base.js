@@ -57,7 +57,7 @@ var BaseTask = Base.extend({
 
             if (answer.choice === 'test') {
                 if (!_this.fileExist(path.resolve(process.cwd(), _this.id, 'Test.js'))) {
-                    _this.copyFile(path.resolve(__dirname, '..', 'questions', _this.position + '_' + _this.id, 'Test.js'), path.resolve(process.cwd(), _this.id, 'Test.js'));
+                    _this.copyFile(path.resolve(__dirname, '..', 'questions', findQuestion(_this.id), 'Test.js'), path.resolve(process.cwd(), _this.id, 'Test.js'));
                 }
                 TaskRunner.logger.info('测试用例已放置在"./' + _this.id + '/Test.js"，请用个人偏好的IDE查看即可');
                 cons();
