@@ -1,6 +1,7 @@
 'use strict';
 
 var Base = require('../../libs/Base');
+var utils = require('../../libs/Utils');
 
 var Question = Base.extend({
     id: 'shallowCopy',
@@ -8,10 +9,10 @@ var Question = Base.extend({
     prepare: function() {
         var path = require('path');
         var index = path.resolve(process.cwd(), this.id, 'index.js');
-        if (this.fileExist(index)) {
+        if (utils.fileExist(index)) {
             return;
         }
-        this.copyFile(path.resolve(__dirname, 'index.js'), index);
+        utils.copyFile(path.resolve(__dirname, 'index.js'), index);
     }
 });
 

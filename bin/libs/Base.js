@@ -5,6 +5,8 @@ var path = require('path');
 var TaskRunner = require('terminal-task-runner');
 var Base = TaskRunner.Base;
 
+var utils = require('./Utils');
+
 var findQuestion = function(id) {
     var dirs = fs.readdirSync(path.resolve(__dirname, '..', 'questions'));
     return dirs.find(function(dir) {
@@ -16,7 +18,7 @@ var BaseTask = Base.extend({
     run: function(cons) {
         var examDir = path.resolve(process.cwd(), this.id);
 
-        if (!this.folderExist(examDir)) {
+        if (!utils.folderExist(examDir)) {
             fs.mkdirSync(examDir);
         }
 
@@ -46,8 +48,6 @@ var BaseTask = Base.extend({
             }
         ], function(answer) {
 
-            var utils = require('./Utils');
-
             if (answer.choice === 'description') {
                 var question = findQuestion(_this.id);
                 utils.printCode(path.resolve(__dirname, '..', 'questions', question, 'desc.txt'));
@@ -56,10 +56,10 @@ var BaseTask = Base.extend({
             }
 
             if (answer.choice === 'test') {
-                if (!_this.fileExist(path.resolve(process.cwd(), _this.id, 'Test.js'))) {
-                    _this.copyFile(path.resolve(__dirname, '..', 'questions', findQuestion(_this.id), 'Test.js'), path.resolve(process.cwd(), _this.id, 'Test.js'));
+                if (!utils.fileExist(path.resolve(process.cwd(), _this.id, 'Test.js'))) {
+                    utils.copyFile(path.resolve(__dirname, '..', 'questions', findQuestion(_this.id), 'Test.js'), path.resolve(process.cwd(), _this.id, 'Test.js'));
                 }
-                TaskRunner.logger.info('测试用例已放置在"./' + _this.id + '/Test.js"，请用个人偏好的IDE查看即可');
+                TaskRunner.logger.info('测试用例已放置在"./' + _this.id + '/Test.js"，用个人偏好的IDE查看即可');
                 cons();
                 return;
             }
@@ -76,19 +76,6 @@ var BaseTask = Base.extend({
             // _this.exec(cons);
 
         });
-    },
-    copyFile: function(src, dest) {
-        var fs = require('fs');
-        fs.createReadStream(src)
-            .pipe(fs.createWriteStream(dest));
-    },
-    fileExist: function(path) {
-        var fs = require('fs');
-        return fs.existsSync(path) && fs.statSync(path).isFile();
-    },
-    folderExist: function(path) {
-        var fs = require('fs');
-        return fs.existsSync(path) && fs.statSync(path).isDirectory();
     }
 });
 

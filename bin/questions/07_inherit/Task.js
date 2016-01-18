@@ -1,6 +1,7 @@
 'use strict';
 
 var Base = require('../../libs/Base');
+var utils = require('../../libs/Utils');
 
 var Question = Base.extend({
     id: 'inherit',
@@ -8,12 +9,12 @@ var Question = Base.extend({
     prepare: function() {
         var path = require('path');
         var parent = path.resolve(process.cwd(), this.id, 'Parent.js');
-        if (!this.fileExist(parent)) {
-            this.copyFile(path.resolve(__dirname, 'Parent.js'), parent);
+        if (!utils.fileExist(parent)) {
+            utils.copyFile(path.resolve(__dirname, 'Parent.js'), parent);
         }
         var son = path.resolve(process.cwd(), this.id, 'Son.js');
-        if (!this.fileExist(son)) {
-            this.copyFile(path.resolve(__dirname, 'Son.js'), son);
+        if (!utils.fileExist(son)) {
+            utils.copyFile(path.resolve(__dirname, 'Son.js'), son);
         }
     }
 });

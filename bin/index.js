@@ -23,6 +23,7 @@ var program = require('commander');
 program
     .version(pkg.version)
     .option('-c, --cli [boolean]', '通过命令行启动考核程序(非retro界面)')
+    .option('-a, --answer [boolean]', '查阅答案')
     .parse(process.argv);
 
 var options = {
@@ -38,10 +39,10 @@ var options = {
     onFinish: function() {}
 };
 
-if (!program.cli) {
+if (program.rawArgs.length <= 2) {
 
     TaskRunner.createMenu(options);
 
 } else {
-    commanderRunner(options);
+    commanderRunner(program, options);
 }

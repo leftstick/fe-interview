@@ -2,16 +2,18 @@
 
 var Base = require('../../libs/Base');
 
+var utils = require('../../libs/Utils');
+
 var Question = Base.extend({
     id: 'urlparser',
     name: '请尝试完成一个URL解析模块',
     prepare: function() {
         var path = require('path');
         var index = path.resolve(process.cwd(), this.id, 'index.js');
-        if (this.fileExist(index)) {
+        if (utils.fileExist(index)) {
             return;
         }
-        this.copyFile(path.resolve(__dirname, 'index.js'), index);
+        utils.copyFile(path.resolve(__dirname, 'index.js'), index);
     }
 });
 

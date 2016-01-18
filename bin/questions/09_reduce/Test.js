@@ -29,7 +29,7 @@ describe('_.reduce', function() {
         var actual = reduce(test, function(previous, i) {
             return previous + i.city + ' ';
         }, 'Hi ');
-        assert.equal(actual, 'Hi Shanghai Beijing ', '上下文环境基本测试失败');
+        assert.equal(actual, 'Hi Shanghai Beijing ', '初始值测试失败');
     });
 
 });
