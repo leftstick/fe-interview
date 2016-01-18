@@ -16,25 +16,27 @@
 var urlparser = function(url) {
     var result = /^(?:(https?):)\/\/([0-9\.\-A-Za-z_]+)(?:([\/a-zA-Z0-9_]+))?(?:\?([a-zA-Z_0-9=&]+))?$/.exec(url);
 
-    if (!result) {
-        throw new Error('url incorrect');
-    }
+    var parsed = {
+        protocol: result[1],
+        host: result[2],
+        path: result[3],
+        query: result[4] && result[4].split('&')
+                .reduce(function(previous, i) {
+                    var tmp = i.split('='),
+                        key = tmp[0],
+                        value = tmp[1];
+                    previous[key] = value;
+                    return previous;
+                }, {})
+    };
 
-    var parsed = {protocol: result[1], host: result[2]};
-
-    if (result[3]) {
-        parsed.path = result[3];
-    }
-
-    if (result[4]) {
-        parsed.query = result[4].split('&').reduce(function(previous, i) {
-            var tmp = i.split('='),
-                key = tmp[0],
-                value = tmp[1];
-            previous[key] = value;
-            return previous;
-        }, {});
-    }
+    Object
+        .keys(parsed)
+        .forEach(function(key) {
+            if (typeof parsed[key] === 'undefined') {
+                delete parsed[key];
+            }
+        });
 
     return parsed;
 };

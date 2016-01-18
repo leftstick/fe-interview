@@ -9,18 +9,11 @@
  *
  **/
 var reduce = function(arr, func, initialValue) {
-    var result = initialValue;
-    if (result) {
-        arr.forEach(function(i, index) {
-            result = func(result, i);
-        });
-    } else {
-        result = arr[0];
-        for (var i = 1; i < arr.length; i++) {
-            result = func(result, arr[i]);
-        }
-    }
-    return result;
+    return arr
+        .slice(typeof initialValue === 'undefined' ? 1 : 0)
+        .reduce(function(result, i) {
+            return func(result, i);
+        }, initialValue || arr[0]);
 };
 
 module.exports = reduce;

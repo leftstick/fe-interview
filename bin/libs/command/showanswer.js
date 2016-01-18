@@ -49,6 +49,9 @@ var answer = function(options) {
             ]);
         })
         .then(function(answer) {
+            if (answer.question.substring(3) === 'inherit') {
+                return require(path.resolve(options.taskDir, answer.question, 'CopyAnwser.js'))(answer.question.substring(3));
+            }
             if (!utils.fileExist(path.resolve(process.cwd(), answer.question.substring(3), 'answer.js'))) {
                 utils.copyFile(path.resolve(options.taskDir, answer.question, 'answer.js'), path.resolve(process.cwd(), answer.question.substring(3), 'answer.js'));
             }
