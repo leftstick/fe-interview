@@ -1,0 +1,27 @@
+## 题目要求
+
+* 在当前路径的`thunkify`下，找到`index.js`，并补全实现代码
+* 再次执行`fe`，选择该测试题目，然后选择"检验答题结果"
+* 检验自己的测试结果
+
+## 提示：
+### 你的`thunkify`模块应该完成如下功能：
+
+```javascript
+var thunkify = require('thunkify');
+
+var say = function(name, words, callback){
+    setTimeout(function(){
+        console.log('Hi ' + name + '! ' + words);
+        callback({
+            status: 'FINISHED'
+        });
+    });
+};
+
+var thunkSay = thunkify(say);
+
+thunkSay('ZhangSan', 'You are freak.')(function(data){
+    console.log(data); // { status: 'FINISHED' }
+});
+```
