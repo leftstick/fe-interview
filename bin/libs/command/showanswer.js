@@ -55,7 +55,7 @@ var answer = function(options) {
             if (!utils.fileExist(path.resolve(process.cwd(), answer.question.substring(3), 'answer.js'))) {
                 utils.copyFile(path.resolve(options.taskDir, answer.question, 'answer.js'), path.resolve(process.cwd(), answer.question.substring(3), 'answer.js'));
             }
-            TaskRunner.logger.info('答案已放置在"./' + answer.question + '/answer.js"，用个人偏好的IDE查看即可');
+            TaskRunner.logger.info('答案已放置在"./' + answer.question.substring(3) + '/answer.js"，用个人偏好的IDE查看即可');
         });
 };
 
