@@ -1,0 +1,28 @@
+## 题目要求
+
+* 在当前路径的`find`下，找到`index.js`，并补全实现代码
+* 再次执行`fe`，选择该测试题目，然后选择"检验答题结果"
+* 检验自己的测试结果
+
+## 提示：
+### 你的`find`模块应该完成如下功能：
+
+```javascript
+var find = require('find');
+
+var arr1 = [3, 6, 9];
+
+var found1 = find(arr1, function(i){
+    return i > 5;
+});
+
+console.log(found1); // 6
+
+var arr2 = [{ name: 'ShangHai', size: 6340.5 }, { name: 'BeiJing', size: 16410.54 }];
+
+var found2 = find(arr2, function(i){
+    return i.name === 'ShangHai';
+});
+
+console.log(found2); // { name: 'ShangHai', size: 6340.5 }
+```

@@ -1,0 +1,38 @@
+## 题目要求
+
+* 在当前路径的`middleware`下，找到`index.js`，并补全实现代码
+* 再次执行`fe`，选择该测试题目，然后选择"检验答题结果"
+* 检验自己的测试结果
+
+## 提示：
+### 你的`middleware`模块应该完成如下功能：
+
+```javascript
+var Middleware = require('Middleware');
+
+var mw = new Middleware();
+
+mw.use(function(next) {
+    var self = this;
+    setTimeout(function() {
+        self.hook1 = true;
+        next();
+    }, 10);
+});
+
+mw.use(function(next) {
+    var self = this;
+    setTimeout(function() {
+        self.hook2 = true;
+        next();
+    }, 10);
+});
+
+var startTime = new Date();
+
+mw.start(function() {
+    console.log(this.hook1); // true
+    console.log(this.hook2); // true
+    console.log(new Date() - startTime); // around 20
+});
+```

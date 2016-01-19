@@ -4,8 +4,26 @@ var assert = require('assert');
 
 describe('_.reduce', function() {
 
+    var NativeReduce, calledNativeReduce;
+
+    before(function() {
+        NativeReduce = Array.prototype.reduce;
+        Array.prototype.reduce = function() {
+            calledNativeReduce = true;
+            return NativeReduce.apply(this, arguments);
+        };
+    });
+
     var path = require('path');
     var reduce = require(path.resolve(process.cwd(), 'reduce', 'index'));
+
+    it('should not use the native reduce', function() {
+        calledNativeReduce = false;
+        reduce(['x'], function(x) {
+            return x;
+        });
+        assert(!calledNativeReduce);
+    });
 
     it('basic test', function() {
         var test = [1, 2, 3];

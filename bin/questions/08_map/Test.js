@@ -4,8 +4,26 @@ var assert = require('assert');
 
 describe('_.map', function() {
 
+    var NativeMap, calledNativeMap;
+
+    before(function() {
+        NativeMap = Array.prototype.map;
+        Array.prototype.map = function() {
+            calledNativeMap = true;
+            return NativeMap.apply(this, arguments);
+        };
+    });
+
     var path = require('path');
     var map = require(path.resolve(process.cwd(), 'map', 'index'));
+
+    it('should not use the native map', function() {
+        calledNativeMap = false;
+        map(['x'], function(x) {
+            return x;
+        });
+        assert(!calledNativeMap);
+    });
 
     it('basic test', function() {
         var test = [1, 2, 3];
