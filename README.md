@@ -25,14 +25,12 @@ npm install -g fe-interview
 fe
 ```
 
->如果不喜欢retro风格的界面，还可以使用`fe -c`或者`fe --cli`打开纯文本界面
-
->使用`fe -a`或者`fe --answer`打开答案查看器
-
 可以打开如下测试界面：
 
 ![](https://raw.githubusercontent.com/leftstick/fe-interview/master/docs/img/preview01.png)
 
+
+#### 如果不喜欢retro风格的界面，还可以使用`fe -c`或者`fe --cli`打开如下纯文本界面
 
 ![](https://raw.githubusercontent.com/leftstick/fe-interview/master/docs/img/preview02.png)
 
@@ -48,6 +46,8 @@ fe
 
 ![](https://raw.githubusercontent.com/leftstick/fe-interview/master/docs/img/preview06.png)
 
+
+#### 使用`fe -a`或者`fe --answer`打开答案查看器
 
 ![](https://raw.githubusercontent.com/leftstick/fe-interview/master/docs/img/preview07.png)
 
