@@ -34,15 +34,19 @@ fe
 
 ![](https://raw.githubusercontent.com/leftstick/fe-interview/master/docs/img/preview02.png)
 
+#### 查看/检测题目
 
 ![](https://raw.githubusercontent.com/leftstick/fe-interview/master/docs/img/preview03.png)
 
+#### 题目描述界面
 
 ![](https://raw.githubusercontent.com/leftstick/fe-interview/master/docs/img/preview04.png)
 
+#### 检测题目结果(错误)界面
 
 ![](https://raw.githubusercontent.com/leftstick/fe-interview/master/docs/img/preview05.png)
 
+#### 检测题目结果(成功)界面
 
 ![](https://raw.githubusercontent.com/leftstick/fe-interview/master/docs/img/preview06.png)
 
