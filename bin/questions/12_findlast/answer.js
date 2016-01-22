@@ -22,13 +22,11 @@
  *
  **/
 var findlast = function(array, func) {
-    var found;
-    array.forEach(function(i, index) {
-        if (func(i, index)) {
-            found = i;
+    for (var i = array.length - 1; i > -1; i--) {
+        if (func(array[i], i)) {
+            return array[i];
         }
-    });
-    return found;
+    }
 };
 
 module.exports = findlast;
