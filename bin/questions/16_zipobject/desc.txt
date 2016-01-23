@@ -1,0 +1,16 @@
+## 题目要求
+
+* 在当前路径的`zipobject`下，找到`index.js`，并补全实现代码
+* 再次执行`fe`，选择该测试题目，然后选择"检验答题结果"
+* 检验自己的测试结果
+
+## 提示：
+### 你的`zipobject`模块应该完成如下功能：
+
+```javascript
+var zipobject = require('zipobject');
+
+zipobject(['fred', 'barney'], [30, 40]); // { 'fred': 30, 'barney': 40 }
+
+zipobject(['Shanghai', 'Beijing'], [25000000, 30000000, 999]); // { 'Shanghai': 25000000, 'Beijing':  30000000}
+```

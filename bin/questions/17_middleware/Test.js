@@ -64,7 +64,7 @@ describe('test basic middleware', function() {
             middleware2.start(function() {
                 assert.equal(this.second, true);
                 done();
-            })
+            });
         });
 
     });

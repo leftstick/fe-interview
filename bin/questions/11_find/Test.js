@@ -36,7 +36,7 @@ describe('test basic find', function() {
         var res = find(arr1, function(i) {
             return i === 'hao';
         });
-        assert.equal('hao', res, '基本测试失败');
+        assert.equal(res, 'hao', '基本测试失败');
     });
 
     it('only first matched element should returned', function() {
@@ -51,7 +51,7 @@ describe('test basic find', function() {
         var res = find(arr1, function(i) {
             return i < 5;
         });
-        assert.equal(1, res, '必须返回第一个匹配元素');
+        assert.equal(res, 1, '必须返回第一个匹配元素');
     });
 
     it('object array should also work', function() {
@@ -70,7 +70,7 @@ describe('test basic find', function() {
         var res = find(arr1, function(i) {
             return i.name === 'ErDan';
         });
-        assert.deepEqual({name: 'ErDan'}, res, '对象元素测试失败');
+        assert.deepEqual(res, {name: 'ErDan'}, '对象元素测试失败');
     });
 
 });

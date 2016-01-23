@@ -21,7 +21,7 @@ describe('flatten', function() {
             ],
             6
         ];
-        assert.deepEqual(_.flattenDeep(arr, true), flatten(arr));
+        assert.deepEqual(flatten(arr), _.flattenDeep(arr));
     });
 
     it('object array', function() {
@@ -42,6 +42,6 @@ describe('flatten', function() {
             ],
             6
         ];
-        assert.deepEqual(_.flattenDeep(arr, true), flatten(arr));
+        assert.deepEqual(flatten(arr), _.flattenDeep(arr));
     });
 });

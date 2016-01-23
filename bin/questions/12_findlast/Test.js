@@ -18,7 +18,7 @@ describe('test basic findlast', function() {
         var res = findlast(arr1, function(i) {
             return i === 'hao';
         });
-        assert.equal('hao', res, '基本测试失败');
+        assert.equal(res, 'hao', '基本测试失败');
     });
 
     it('only first matched element should returned', function() {
@@ -33,7 +33,7 @@ describe('test basic findlast', function() {
         var res = findlast(arr1, function(i) {
             return i < 5;
         });
-        assert.equal(4, res, '必须返回最后一个匹配元素');
+        assert.equal(res, 4, '必须返回最后一个匹配元素');
     });
 
     it('object array should also work', function() {
@@ -52,7 +52,7 @@ describe('test basic findlast', function() {
         var res = findlast(arr1, function(i) {
             return i.name.indexOf('e') > -1;
         });
-        assert.deepEqual({name: 'LiLei'}, res, '对象元素测试失败');
+        assert.deepEqual(res, {name: 'LiLei'}, '对象元素测试失败');
     });
 
 });
