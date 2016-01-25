@@ -1,0 +1,20 @@
+## 题目要求
+
+* 在当前路径的`flatmap`下，找到`index.js`，并补全实现代码
+* 再次执行`fe`，选择该测试题目，然后选择"检验答题结果"
+* 检验自己的测试结果
+
+## 提示：
+### 你的`flatmap`模块应该完成如下功能：
+
+```javascript
+var flatmap = require('flatmap');
+
+var arr1 = ['a', 'b'];
+
+var duplicate = function(x){
+    return [x, x];
+};
+
+flatmap(arr1, duplicate); // ['a', 'a', 'b', 'b']
+```
