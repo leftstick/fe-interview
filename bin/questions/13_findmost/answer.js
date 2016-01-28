@@ -22,21 +22,18 @@
 var findmost = function(array, identity) {
     var countObj = array.reduce(function(previous, key) {
         var k = identity ? identity(key) : key;
-        previous[k] = previous[k] ? ++previous[k] : 1;
+        previous[k] = {
+            count: previous[k] ? ++previous[k].count : 1,
+            raw: key
+        };
         return previous;
     }, {});
 
-    var result = Object.keys(countObj).reduce(function(previous, key) {
-        return countObj[previous] > countObj[key] ? previous : key;
+    var mostKey = Object.keys(countObj).reduce(function(previous, key) {
+        return countObj[previous].count > countObj[key].count ? previous : key;
     });
 
-    if (!identity) {
-        return result;
-    }
-
-    return array.find(function(item) {
-        return identity(item) === result;
-    });
+    return countObj[mostKey].raw;
 };
 
 module.exports = findmost;

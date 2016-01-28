@@ -23,4 +23,12 @@ describe('test basic difference', function() {
         assert.deepEqual(res, [1, 3], 'NaN匹配测试失败');
     });
 
+    it('should match NaN2', function() {
+        var arr1 = [1, NaN, 3];
+        var arr2 = [5, 'k'];
+
+        var res = difference(arr1, arr2);
+        assert.equal(res.toString(), '1,NaN,3', 'NaN2匹配测试失败');
+    });
+
 });
