@@ -11,7 +11,7 @@
  *
  *
  **/
-var zipobject = function() {
+var zipobject = function(arr1, arr2) {
     //在这里实现
 };
 
