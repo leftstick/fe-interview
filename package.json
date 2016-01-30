@@ -1,7 +1,7 @@
 {
   "name": "fe-interview",
   "description": "Retro ansi terminal for front-end interview questions",
-  "version": "4.8.2",
+  "version": "4.9.0",
   "homepage": "https://github.com/leftstick/fe-interview",
   "repository": {
     "type": "git",
@@ -27,8 +27,8 @@
     "commander": "^2.9.0",
     "inquirer": "^0.11.4",
     "just-promiseify": "^1.1.0",
-    "lodash": "^4.0.1",
-    "mocha": "^2.4.4",
+    "lodash": "^4.1.0",
+    "mocha": "^2.4.5",
     "sinon": "^1.17.3",
     "terminal-task-runner": "^1.6.0",
     "update-notifier": "^0.6.0"

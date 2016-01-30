@@ -1,0 +1,20 @@
+## 题目要求
+
+* 在当前路径的`filter`下，找到`index.js`，并补全实现代码
+* 再次执行`fe`，选择该测试题目，然后选择"检验答题结果"
+* 检验自己的测试结果
+
+## 提示：
+### 你的`filter`模块应该完成如下功能：
+
+```javascript
+var filter = require('filter');
+
+var array = [1, 2, 3];
+
+var isEven = function(item){
+    return item % 2 === 0;
+};
+
+filter(array, isEven); // [2]
+```
