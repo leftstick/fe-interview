@@ -1,0 +1,25 @@
+## 题目要求
+
+* 在当前路径的`di`下，找到`index.js`，并补全实现代码
+* 再次执行`fe`，选择该测试题目，然后选择"检验答题结果"
+* 检验自己的测试结果
+
+## 提示：
+### 你的`di`模块应该完成如下功能：
+
+```javascript
+var di = require('di');
+
+var app = new di();
+
+app.register('duck', {
+    fly: function(){
+        console.log('fuck flying');
+    }
+});
+
+app.run(['duck', function(duck){
+    duck.fly();//fuck flying
+}]);
+
+```
