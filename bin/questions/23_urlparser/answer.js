@@ -23,12 +23,9 @@ var urlparser = function(url) {
     }
 
     if (result[4]) {
-        parsed.query = result[4].match(/([\w]+)=([\w]+)?/g)
-            .reduce(function(previous, i) {
-                var splits = i.split('=');
-                previous[splits[0]] = splits[1];
-                return previous;
-            }, {});
+        parsed.query = result[4].split('&')
+            .map((query) => query.split('='))
+            .reduce((params, pairs) => (params[pairs[0]] = pairs[1], params), {});
     }
 
     return parsed;
