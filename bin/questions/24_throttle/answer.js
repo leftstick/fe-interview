@@ -27,7 +27,8 @@
  **/
 var throttle = function(func, wait) {
     var createThrottle = function(f, t) {
-        var last, timer;
+        var last,
+            timer;
         return function() {
             var args = Array.prototype.slice.call(arguments);
             var _this = this,
@@ -36,11 +37,15 @@ var throttle = function(func, wait) {
                 last = now;
                 return func.apply(_this, args);
             }
-            if (now - last <= wait) {
+            if (now - last > wait) {
+                func.apply(_this, args);
+                last = new Date().getTime();
+                clearTimeout(timer);
+            } else {
                 clearTimeout(timer);
                 timer = setTimeout(function() {
-                    last = new Date().getTime();
                     func.apply(_this, args);
+                    last = new Date().getTime();
                 }, wait - now + last);
             }
         };

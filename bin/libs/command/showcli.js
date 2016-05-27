@@ -16,7 +16,7 @@ var cli = function(options) {
             });
         })
         .then(function(tasks) {
-            return promiseify(inquirer.prompt)([
+            return inquirer.prompt([
                 {
                     type: 'list',
                     name: 'task',
@@ -32,6 +32,7 @@ var cli = function(options) {
             answers.task.run(() => {
             });
         });
+
 };
 
 module.exports = cli;

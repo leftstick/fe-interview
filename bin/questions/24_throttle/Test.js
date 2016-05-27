@@ -5,7 +5,8 @@ var sinon = require('sinon');
 
 describe('test throttle functionality', function() {
 
-    var path = require('path'), clock;
+    var path = require('path'),
+        clock;
     var throttle = require(path.resolve(process.cwd(), 'throttle', 'index'));
 
     beforeEach(function() {
@@ -94,7 +95,7 @@ describe('test throttle functionality', function() {
             args = [].slice.call(arguments);
         }, 10);
         throttled('Dongbei', [1, 2]);
-        assert.deepEqual(args, ['Dongbei', [1,2]], '指定参数调用测试失败');
+        assert.deepEqual(args, ['Dongbei', [1, 2]], '指定参数调用测试失败');
     });
 
     it('executed with the later arguments', function(done) {
@@ -113,7 +114,8 @@ describe('test throttle functionality', function() {
     });
 
     it('multiple throttled funcs should be isolated with each other', function() {
-        var args1, args2;
+        var args1,
+            args2;
         var throttled1 = throttle(function() {
             args1 = [].slice.call(arguments);
         }, 10);
@@ -129,7 +131,8 @@ describe('test throttle functionality', function() {
 
     it('multiple throttled funcs should be isolated with each other 2', function(done) {
         var args1,
-            called1 = 0, args2,
+            called1 = 0,
+            args2,
             called2 = 0;
         var throttled1 = throttle(function() {
             called1++;
