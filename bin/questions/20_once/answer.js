@@ -15,16 +15,18 @@
  *  onceCall();
  *
  **/
-var getOnceCall = function(fn) {
-    var value, executed;
+var once = function(func) {
+    var value,
+        executed;
     return function() {
         var args = Array.prototype.slice.call(arguments);
-        return !executed ? (executed = true, value = fn.apply(this, args)) : value;
+        if (!executed) {
+            executed = true;
+            value = func.apply(this, args);
+            return value;
+        }
+        return value;
     };
-};
-
-var once = function(func) {
-    return getOnceCall(func);
 };
 
 module.exports = once;

@@ -14,10 +14,7 @@
  **/
 var filter = function(arr, iteratee) {
     return arr.reduce(function(previous, item) {
-        if (iteratee(item)) {
-            previous.push(item);
-        }
-        return previous;
+        return (iteratee(item) && previous.push(item), previous);
     }, []);
 };
 

@@ -18,10 +18,7 @@ var difference = function(arr1, arr2) {
         var found = arr2.findIndex(function(j) {
             return j === i || (isNaN(i) && isNaN(j));
         });
-        if (found < 0) {
-            previous.push(i);
-        }
-        return previous;
+        return (found < 0 && previous.push(i), previous);
     }, []);
 };
 

@@ -20,20 +20,21 @@
  *
  **/
 var findmost = function(array, identity) {
-    var countObj = array.reduce(function(previous, key) {
-        var k = identity ? identity(key) : key;
-        previous[k] = {
-            count: previous[k] ? ++previous[k].count : 1,
-            raw: key
-        };
-        return previous;
-    }, {});
-
-    var mostKey = Object.keys(countObj).reduce(function(previous, key) {
-        return countObj[previous].count > countObj[key].count ? previous : key;
-    });
-
-    return countObj[mostKey].raw;
+    var occurrence = {};
+    var most;
+    for (var i = 0; i < array.length; i++) {
+        var item = array[i];
+        var id = identity ? identity(item) : item;
+        if (!occurrence[id]) {
+            occurrence[id] = {count: 1, raw: item};
+        } else {
+            occurrence[id].count++;
+        }
+        if (!most || (most !== id && occurrence[id].count > occurrence[most].count)) {
+            most = id;
+        }
+    }
+    return occurrence[most].raw;
 };
 
 module.exports = findmost;

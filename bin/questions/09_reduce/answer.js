@@ -9,7 +9,7 @@
  *
  **/
 var reduce = function(arr, func, initialValue) {
-    var result = initialValue || arr[0];
+    var result = typeof initialValue === 'undefined' ? arr[0] : initialValue;
     arr
         .slice(typeof initialValue === 'undefined' ? 1 : 0)
         .forEach(function(i) {
