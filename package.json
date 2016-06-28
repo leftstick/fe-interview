@@ -1,7 +1,7 @@
 {
   "name": "fe-interview",
   "description": "Retro ansi terminal for front-end interview questions",
-  "version": "4.10.3",
+  "version": "4.10.4",
   "homepage": "https://github.com/leftstick/fe-interview",
   "repository": {
     "type": "git",
