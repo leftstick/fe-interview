@@ -9,13 +9,15 @@
  *
  **/
 var reduce = function(arr, func, initialValue) {
-    var result = typeof initialValue === 'undefined' ? arr[0] : initialValue;
+    var base = typeof initialValue === 'undefined' ? arr[0] : initialValue;
+    var stepForward = typeof initialValue === 'undefined' ? 1 : 0;
+    var startPoint = stepForward;
     arr
-        .slice(typeof initialValue === 'undefined' ? 1 : 0)
-        .forEach(function(i) {
-            result = func(result, i);
+        .slice(startPoint)
+        .forEach(function(val, index) {
+            base = func(base, val, index + stepForward, arr);
         });
-    return result;
+    return base;
 };
 
 module.exports = reduce;
