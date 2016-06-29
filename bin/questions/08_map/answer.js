@@ -13,7 +13,7 @@ var map = function(arr, func, ctx) {
     var array = [];
 
     arr.forEach(function(i, index) {
-        array.push(func.call(ctx, i, index));
+        array.push(func.call(ctx, i, index, arr));
     });
 
     return array;
