@@ -15,7 +15,7 @@
  *
  **/
 var shallowCopy = function(value) {
-    return Array.prototype.slice.apply(value);
+    return Object.assign(new (Object.getPrototypeOf(value).constructor)(),value);
 };
 
 module.exports = shallowCopy;
