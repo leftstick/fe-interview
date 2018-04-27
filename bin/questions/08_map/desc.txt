@@ -8,17 +8,17 @@
 ### 你的`map`模块应该完成如下功能：
 
 ```javascript
-var map = require('map');
+const map = require('map');
 
-var test1 = [1, 2];
-var map1 = map(test1, function(i){
+const test1 = [1, 2];
+const map1 = map(test1, function(i){
     return i + 1;
 });
 
 console.log(map1); //[2, 3]
 
-var test2 = [{name: 'nan', age: 25}, {name: 'bei', age: 33}];
-var map2 = map(test2, function(i){
+const test2 = [{name: 'nan', age: 25}, {name: 'bei', age: 33}];
+const map2 = map(test2, function(i){
     return i.age * this;
 }, 5);
 

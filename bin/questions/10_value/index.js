@@ -1,14 +1,13 @@
-'use strict';
 
 /**
  *
  *  尝试完成如下功能：
  *
- *  var what = 'The fuck!';
+ *  const what = 'The fuck!';
  *
  *  value(what) === 'The fuck!'
  *
- *  var hello = function() {
+ *  const hello = function() {
  *      return 'world';
  *  };
  *
@@ -16,7 +15,7 @@
  *
  *
  **/
-var value = function(anything) {
+const value = function(anything) {
     //在这里实现
 };
 

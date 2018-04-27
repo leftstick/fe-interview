@@ -8,12 +8,12 @@
 ### 你的`currying`模块应该完成如下功能：
 
 ```javascript
-var currying = require('currying');
+const currying = require('currying');
 
-var add = function(a, b) {
+const add = function(a, b) {
     return a + b;
 };
 
-var curried = curry(add);
+const curried = curry(add);
 console.log(curried(1)(2));//3
 ```

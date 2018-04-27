@@ -1,22 +1,20 @@
-'use strict';
-
 /**
  *
  *  尝试完成如下功能：
  *
- *  var fullUrl = 'https://github.com/tj/lkk?tab=repositories&date=20160118&ttt=sss';
+ *  const fullUrl = 'https://github.com/tj/lkk?tab=repositories&date=20160118&ttt=sss';
  *
  *  urlparser(fullUrl) // { protocol: 'https', host: 'github.com', path: '/tj/lkk', query: { tab: 'repositories', date: '20160118', ttt: 'sss' } }
  *
- *  var simpleUrl = 'http://www.baidu.com';
+ *  const simpleUrl = 'http://www.baidu.com';
  *
  *  urlparser(simpleUrl) // { protocol: 'http', host: 'www.baidu.com' }
  *
  **/
-var urlparser = function(url) {
-    var result = /^(?:(https?):)\/\/([\.\-\w]+)(?:([\/\w]+))?(?:\?([\w=&]+))?$/.exec(url);
+const urlparser = function(url) {
+    const result = /^(?:(https?):)\/\/([\.\-\w]+)(?:([\/\w]+))?(?:\?([\w=&]+))?$/.exec(url);
 
-    var parsed = {protocol: result[1], host: result[2]};
+    const parsed = {protocol: result[1], host: result[2]};
 
     if (result[3]) {
         parsed.path = result[3];

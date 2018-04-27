@@ -1,13 +1,12 @@
-'use strict';
 
-var assert = require('assert');
-var sinon = require('sinon');
+const assert = require('assert');
+const sinon = require('sinon');
 
 describe('test throttle functionality', function() {
 
-    var path = require('path'),
-        clock;
-    var throttle = require(path.resolve(process.cwd(), 'throttle', 'index'));
+    const path = require('path');
+    let clock;
+    const throttle = require(path.resolve(process.cwd(), 'throttle', 'index'));
 
     beforeEach(function() {
         clock = sinon.useFakeTimers();
@@ -18,8 +17,8 @@ describe('test throttle functionality', function() {
     });
 
     it('basic test', function() {
-        var passed = false;
-        var throttled = throttle(function() {
+        let passed = false;
+        const throttled = throttle(function() {
             passed = true;
         }, 10);
         throttled();
@@ -28,8 +27,8 @@ describe('test throttle functionality', function() {
     });
 
     it('execute only once within the threshold', function(done) {
-        var called = 0;
-        var throttled = throttle(function() {
+        let called = 0;
+        const throttled = throttle(function() {
             called++;
         }, 10);
         throttled();
@@ -43,8 +42,8 @@ describe('test throttle functionality', function() {
     });
 
     it('will execute the last call if the previous threshold passed', function(done) {
-        var called = 0;
-        var throttled = throttle(function() {
+        let called = 0;
+        const throttled = throttle(function() {
             called++;
         }, 10);
         throttled();
@@ -58,13 +57,13 @@ describe('test throttle functionality', function() {
     });
 
     it('executed every threshold ms', function(done) {
-        var startTime = new Date();
-        var calledTimes = [];
-        var throttled = throttle(function() {
+        const startTime = new Date();
+        const calledTimes = [];
+        const throttled = throttle(function() {
             calledTimes.push(new Date() - startTime);
         }, 10);
         throttled(); //start now
-        var interval = setInterval(throttled, 1);
+        const interval = setInterval(throttled, 1);
         setTimeout(function() {
             clearInterval(interval);
             assert.deepEqual(calledTimes, [
@@ -81,8 +80,8 @@ describe('test throttle functionality', function() {
     });
 
     it('executed with context specified', function() {
-        var ctx;
-        var throttled = throttle(function() {
+        let ctx;
+        const throttled = throttle(function() {
             ctx = this;
         }, 10);
         throttled.call({name: 'wo'});
@@ -90,8 +89,8 @@ describe('test throttle functionality', function() {
     });
 
     it('executed with arguments', function() {
-        var args;
-        var throttled = throttle(function() {
+        let args;
+        const throttled = throttle(function() {
             args = [].slice.call(arguments);
         }, 10);
         throttled('Dongbei', [1, 2]);
@@ -99,8 +98,8 @@ describe('test throttle functionality', function() {
     });
 
     it('executed with the later arguments', function(done) {
-        var args;
-        var throttled = throttle(function() {
+        let args;
+        const throttled = throttle(function() {
             args = [].slice.call(arguments);
         }, 10);
         throttled('Shang', 'Hai');
@@ -114,13 +113,13 @@ describe('test throttle functionality', function() {
     });
 
     it('multiple throttled funcs should be isolated with each other', function() {
-        var args1,
+        let args1,
             args2;
-        var throttled1 = throttle(function() {
+        const throttled1 = throttle(function() {
             args1 = [].slice.call(arguments);
         }, 10);
 
-        var throttled2 = throttle(function() {
+        const throttled2 = throttle(function() {
             args2 = [].slice.call(arguments);
         }, 10);
         throttled1('Shang', 'Hai');
@@ -130,16 +129,16 @@ describe('test throttle functionality', function() {
     });
 
     it('multiple throttled funcs should be isolated with each other 2', function(done) {
-        var args1,
+        let args1,
             called1 = 0,
             args2,
             called2 = 0;
-        var throttled1 = throttle(function() {
+        const throttled1 = throttle(function() {
             called1++;
             args1 = [].slice.call(arguments);
         }, 10);
 
-        var throttled2 = throttle(function() {
+        const throttled2 = throttle(function() {
             called2++;
             args2 = [].slice.call(arguments);
         }, 10);

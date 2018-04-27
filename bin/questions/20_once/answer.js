@@ -1,25 +1,23 @@
-'use strict';
-
 /**
  *
  *  尝试完成如下功能：
  *
- *  var getName = function(){
+ *  const getName = function(){
  *      console.log('Just say hi');
  *      return 'world';
  *  };
  *
- *  var onceCall = once(getName);
+ *  const onceCall = once(getName);
  *
  *  onceCall(); //Just say hi
  *  onceCall();
  *
  **/
-var once = function(func) {
-    var value,
+const once = function(func) {
+    let value,
         executed;
     return function() {
-        var args = Array.prototype.slice.call(arguments);
+        const args = Array.prototype.slice.call(arguments);
         if (!executed) {
             executed = true;
             value = func.apply(this, args);

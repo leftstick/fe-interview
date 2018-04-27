@@ -8,11 +8,11 @@
 ### 你的`filter`模块应该完成如下功能：
 
 ```javascript
-var filter = require('filter');
+const filter = require('filter');
 
-var array = [1, 2, 3];
+const array = [1, 2, 3];
 
-var isEven = function(item){
+const isEven = function(item){
     return item % 2 === 0;
 };
 

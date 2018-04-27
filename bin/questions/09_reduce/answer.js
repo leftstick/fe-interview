@@ -1,4 +1,3 @@
-'use strict';
 
 /**
  *
@@ -8,10 +7,10 @@
  *  reduce([{name: 'nan', age: 2}, {name: 'fang', age: 3}], function(previous, i){ return previous + i.name;  }, 'Hello ') = Hello nanfeng
  *
  **/
-var reduce = function(arr, func, initialValue) {
-    var base = typeof initialValue === 'undefined' ? arr[0] : initialValue;
-    var stepForward = typeof initialValue === 'undefined' ? 1 : 0;
-    var startPoint = stepForward;
+const reduce = function(arr, func, initialValue) {
+    let base = typeof initialValue === 'undefined' ? arr[0] : initialValue;
+    const stepForward = typeof initialValue === 'undefined' ? 1 : 0;
+    const startPoint = stepForward;
     arr
         .slice(startPoint)
         .forEach(function(val, index) {

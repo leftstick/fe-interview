@@ -1,14 +1,13 @@
-'use strict';
 
-var Base = require('../../libs/Base');
-var utils = require('../../libs/Utils');
+const Base = require('../../libs/Base');
+const utils = require('../../libs/Utils');
 
-var Question = Base.extend({
+const Question = Base.extend({
     id: 'flatten',
     name: '请尝试完成一个类似\'_.flatten\'的模块',
     prepare: function() {
-        var path = require('path');
-        var index = path.resolve(process.cwd(), this.id, 'index.js');
+        const path = require('path');
+        const index = path.resolve(process.cwd(), this.id, 'index.js');
         if (utils.fileExist(index)) {
             return;
         }

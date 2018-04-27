@@ -8,7 +8,7 @@
 ### 你的`zipobject`模块应该完成如下功能：
 
 ```javascript
-var zipobject = require('zipobject');
+const zipobject = require('zipobject');
 
 zipobject(['fred', 'barney'], [30, 40]); // { 'fred': 30, 'barney': 40 }
 

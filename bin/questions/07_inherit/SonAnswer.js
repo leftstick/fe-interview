@@ -1,4 +1,3 @@
-'use strict';
 
 /**
  *
@@ -7,9 +6,9 @@
  *  3. 并在Son中增加原型方法getChildName，使其返回自己的名字childName
  *
  **/
-var Parent = require('./ParentAnswer');
+const Parent = require('./ParentAnswer');
 
-var Son = function(parentName, name) {
+const Son = function(parentName, name) {
     Parent.call(this, parentName);
     this.childName = name;
 };

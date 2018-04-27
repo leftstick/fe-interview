@@ -8,19 +8,19 @@
 ### 你的`reduce`模块应该完成如下功能：
 
 ```javascript
-var reduce = require('reduce');
+const reduce = require('reduce');
 
-var test1 = [1, 2];
+const test1 = [1, 2];
 
-var reduce1 = reduce(test1, function(previous, i) {
+const reduce1 = reduce(test1, function(previous, i) {
     return previous + i;
 });
 
 console.log(reduce1); //3
 
-var test2 = [{name: 'nan',age: 25}, {name: 'bei',age: 33}];
+const test2 = [{name: 'nan',age: 25}, {name: 'bei',age: 33}];
 
-var reduce2 = reduce(test2, function(previous, i) {
+const reduce2 = reduce(test2, function(previous, i) {
     return previous + i.name + ' ';
 }, 'Hello ');
 

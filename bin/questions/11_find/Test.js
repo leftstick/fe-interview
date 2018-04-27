@@ -1,10 +1,8 @@
-'use strict';
-
-var assert = require('assert');
+const assert = require('assert');
 
 describe('test basic find', function() {
 
-    var NativeFind, calledNativeFind;
+    let NativeFind, calledNativeFind;
 
     before(function() {
         NativeFind = Array.prototype.find;
@@ -14,8 +12,8 @@ describe('test basic find', function() {
         };
     });
 
-    var path = require('path');
-    var find = require(path.resolve(process.cwd(), 'find', 'index'));
+    const path = require('path');
+    const find = require(path.resolve(process.cwd(), 'find', 'index'));
 
     it('should not use the native find', function() {
         calledNativeFind = false;
@@ -26,21 +24,21 @@ describe('test basic find', function() {
     });
 
     it('basic test', function() {
-        var arr1 = [
+        const arr1 = [
             'nan',
             'feng',
             'hao',
             'li'
         ];
 
-        var res = find(arr1, function(i) {
+        const res = find(arr1, function(i) {
             return i === 'hao';
         });
         assert.equal(res, 'hao', '基本测试失败');
     });
 
     it('only first matched element should returned', function() {
-        var arr1 = [
+        const arr1 = [
             1,
             2,
             4,
@@ -48,14 +46,14 @@ describe('test basic find', function() {
             6
         ];
 
-        var res = find(arr1, function(i) {
+        const res = find(arr1, function(i) {
             return i < 5;
         });
         assert.equal(res, 1, '必须返回第一个匹配元素');
     });
 
     it('object array should also work', function() {
-        var arr1 = [
+        const arr1 = [
             {
                 name: 'HanMeimei'
             },
@@ -67,7 +65,7 @@ describe('test basic find', function() {
             }
         ];
 
-        var res = find(arr1, function(i) {
+        const res = find(arr1, function(i) {
             return i.name === 'ErDan';
         });
         assert.deepEqual(res, {name: 'ErDan'}, '对象元素测试失败');

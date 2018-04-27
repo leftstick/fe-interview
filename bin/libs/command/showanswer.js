@@ -1,13 +1,11 @@
-'use strict';
+const promiseify = require('just-promiseify');
+const inquirer = require('inquirer');
+const fs = require('fs');
+const path = require('path');
+const TaskRunner = require('terminal-task-runner');
+const utils = require('../Utils');
 
-var promiseify = require('just-promiseify');
-var inquirer = require('inquirer');
-var fs = require('fs');
-var path = require('path');
-var TaskRunner = require('terminal-task-runner');
-var utils = require('../Utils');
-
-var answer = function(options) {
+const answer = function(options) {
     return promiseify(fs.readdir)(options.taskDir)
         .then(function(dirs) {
             return dirs;
@@ -19,7 +17,7 @@ var answer = function(options) {
             ]);
         })
         .then(function(data) {
-            return promiseify(inquirer.prompt)([
+            return inquirer.prompt([
                 {
                     type: 'list',
                     name: 'question',
@@ -41,7 +39,7 @@ var answer = function(options) {
                             return {
                                 name: file,
                                 value: data[0].find(function(raw) {
-                                    return raw.indexOf(file) > 0;
+                                    return raw.slice(3) === file;
                                 })
                             };
                         })
@@ -49,6 +47,7 @@ var answer = function(options) {
             ]);
         })
         .then(function(answer) {
+            console.log('ans', answer);
             if (answer.question.substring(3) === 'inherit') {
                 return require(path.resolve(options.taskDir, answer.question, 'CopyAnwser.js'))(answer.question.substring(3));
             }

@@ -1,35 +1,33 @@
-'use strict';
-
-var assert = require('assert');
+const assert = require('assert');
 
 describe('duplicate', function() {
 
-    var path = require('path');
-    var currying = require(path.resolve(process.cwd(), 'currying', 'index'));
+    const path = require('path');
+    const currying = require(path.resolve(process.cwd(), 'currying', 'index'));
 
     it('curries the function at least once', function() {
-        var add = currying(function(a, b) {
+        const add = currying(function(a, b) {
             return a + b;
         });
         assert.equal(add(1)(2), 3, '一次柯里化验证失败');
     });
 
     it('curries the function until the arguments needed are given at least once', function() {
-        var add = currying(function(a, b, c) {
+        const add = currying(function(a, b, c) {
             return a + b + c;
         });
         assert.equal(add(1, 2)(3), 6, '多参数一次柯里化验证失败');
     });
 
     it('curries the function until the arguments needed are given mutliple times', function() {
-        var add = currying(function(a, b, c) {
+        const add = currying(function(a, b, c) {
             return a + b + c;
         });
         assert.equal(add(1)(2)(3), 6, '多参数多次柯里化验证失败');
     });
 
     it('doesn\'t share state between calls', function() {
-        var add = currying(function(a, b, c) {
+        const add = currying(function(a, b, c) {
             return a + b + c;
         });
         assert.equal(add(1)(2)(3), 6, '多参数多次柯里化验证失败');
@@ -37,10 +35,10 @@ describe('duplicate', function() {
     });
 
     it('doesn\'t share state between while currying used mutliple times later on', function() {
-        var add = currying(function(a, b, c, d) {
+        const add = currying(function(a, b, c, d) {
             return a + b + c + d;
         });
-        var a11 = add(1);
+        const a11 = add(1);
         assert.equal(a11(2)(3)(4), 10, '多参数多次柯里化验证失败');
         assert.equal(a11(2, 3, 4), 10, '多参数多次柯里化复用验证失败');
     });

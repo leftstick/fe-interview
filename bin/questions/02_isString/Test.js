@@ -1,19 +1,17 @@
-'use strict';
-
-var assert = require('assert');
+const assert = require('assert');
 
 describe('isString', function() {
 
-    var path = require('path');
-    var isString = require(path.resolve(process.cwd(), 'isString', 'index'));
+    const path = require('path');
+    const isString = require(path.resolve(process.cwd(), 'isString', 'index'));
 
     it('basic test', function() {
-        var test = 'hello';
+        const test = 'hello';
         assert(isString(test), '原始string类型校验失败');
     });
 
     it('basic number', function() {
-        var test = 12445;
+        const test = 12445;
         assert.equal(isString(test), false, '原始数值类型校验失败');
     });
 

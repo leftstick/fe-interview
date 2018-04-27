@@ -8,9 +8,9 @@
 ### 你的`urlparser`模块应该完成如下功能：
 
 ```javascript
-var urlparser = require('urlparser');
+const urlparser = require('urlparser');
 
-var simpleUrl = 'https://github.com/tj?tab=repositories&date=20160118';
+const simpleUrl = 'https://github.com/tj?tab=repositories&date=20160118';
 
 console.log(urlparser(simpleUrl)); //{ protocol: 'https', host: 'github.com', path: '/tj', query: {tab: 'repositories', date: '20160118'} }
 

@@ -1,4 +1,3 @@
-'use strict';
 
 /**
  *
@@ -12,7 +11,7 @@
  *
  *
  **/
-var times = function(n, func) {
+const times = function(n, func) {
     //在这里实现
 };
 

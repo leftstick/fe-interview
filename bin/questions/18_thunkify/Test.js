@@ -1,14 +1,12 @@
-'use strict';
-
-var assert = require('assert');
+const assert = require('assert');
 
 describe('test basic thunkify', function() {
 
-    var path = require('path');
-    var thunkify = require(path.resolve(process.cwd(), 'thunkify', 'index'));
+    const path = require('path');
+    const thunkify = require(path.resolve(process.cwd(), 'thunkify', 'index'));
 
     it('basic test1', function(done) {
-        var read = function(file, fn) {
+        let read = function(file, fn) {
             fn(null, 'file: ' + file);
         };
 
@@ -22,7 +20,7 @@ describe('test basic thunkify', function() {
     });
 
     it('should work when async', function(done) {
-        var read = function(file, fn) {
+        let read = function(file, fn) {
             setTimeout(function() {
                 fn(null, 'file: ' + file);
             }, 5);
@@ -38,11 +36,11 @@ describe('test basic thunkify', function() {
     });
 
     it('should maintain the receiver', function(done) {
-        var load = function(fn) {
+        const load = function(fn) {
             fn(null, this.name);
         };
 
-        var user = {name: 'nanfeng', load: thunkify(load)};
+        const user = {name: 'nanfeng', load: thunkify(load)};
 
         user.load()(function(err, name) {
             if (err) {
@@ -54,7 +52,7 @@ describe('test basic thunkify', function() {
     });
 
     it('should catch errors', function(done) {
-        var load = function(fn) {
+        let load = function(fn) {
             throw new Error('wow!!!');
         };
 
@@ -68,7 +66,7 @@ describe('test basic thunkify', function() {
     });
 
     it('should pass all results', function(done) {
-        var read = function(file, fn) {
+        let read = function(file, fn) {
             setTimeout(function() {
                 fn(null, file.substring(0, 2), file.substring(6));
             }, 5);

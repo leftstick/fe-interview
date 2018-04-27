@@ -1,15 +1,13 @@
-'use strict';
-
-var assert = require('assert');
+const assert = require('assert');
 
 describe('test basic flatmap', function() {
 
-    var path = require('path');
-    var flatmap = require(path.resolve(process.cwd(), 'flatmap', 'index'));
+    const path = require('path');
+    const flatmap = require(path.resolve(process.cwd(), 'flatmap', 'index'));
 
     it('basic test', function() {
-        var arr1 = ['barney', 'fred'];
-        var iteratee = function(x, index) {
+        const arr1 = ['barney', 'fred'];
+        const iteratee = function(x, index) {
             return [x, index];
         };
         assert.deepEqual(flatmap(arr1, iteratee), [
@@ -21,8 +19,8 @@ describe('test basic flatmap', function() {
     });
 
     it('multiple elements test', function() {
-        var arr1 = [99, 77];
-        var iteratee = function(x, index) {
+        const arr1 = [99, 77];
+        const iteratee = function(x, index) {
             return [x, x + index, x * index];
         };
         assert.deepEqual(flatmap(arr1, iteratee), [

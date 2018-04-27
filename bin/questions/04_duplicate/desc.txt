@@ -8,8 +8,8 @@
 ### 你的`duplicate`模块应该完成如下功能：
 
 ```javascript
-var duplicate = require('duplicate');
-var testArr = [1, 2, 3, 4, 5];
+const duplicate = require('duplicate');
+const testArr = [1, 2, 3, 4, 5];
 
 console.log(duplicate(testArr));//[1, 2, 3, 4, 5, 1, 2, 3, 4, 5]
 ```

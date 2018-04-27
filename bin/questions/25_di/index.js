@@ -1,10 +1,9 @@
-'use strict';
 
 /**
  *
  *  尝试完成如下功能：
  *
- * var app = new Di();
+ * const app = new Di();
  *
  * app.register('duck', {
  *     fly: function(){
@@ -18,7 +17,7 @@
  *
  *
  **/
-var Di = function() {};
+const Di = function() {};
 
 Di.prototype.register = function(name, inst) {};
 

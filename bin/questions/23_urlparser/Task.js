@@ -1,15 +1,14 @@
-'use strict';
 
-var Base = require('../../libs/Base');
+const Base = require('../../libs/Base');
 
-var utils = require('../../libs/Utils');
+const utils = require('../../libs/Utils');
 
-var Question = Base.extend({
+const Question = Base.extend({
     id: 'urlparser',
     name: '请尝试完成一个URL解析模块',
     prepare: function() {
-        var path = require('path');
-        var index = path.resolve(process.cwd(), this.id, 'index.js');
+        const path = require('path');
+        const index = path.resolve(process.cwd(), this.id, 'index.js');
         if (utils.fileExist(index)) {
             return;
         }

@@ -8,14 +8,14 @@
 ### 你的`once`模块应该完成如下功能：
 
 ```javascript
-var once = require('once');
+const once = require('once');
 
-var getName = function(){
+const getName = function(){
     console.log('Just say hi');
     return 'world';
 };
 
-var onceCall = once(getName);
+const onceCall = once(getName);
 
 onceCall(); //Just say hi
 onceCall();

@@ -1,10 +1,9 @@
-'use strict';
 
-var assert = require('assert');
+const assert = require('assert');
 
 describe('test basic filter', function() {
 
-    var NativeFilter, calledNativeFilter;
+    let NativeFilter, calledNativeFilter;
 
     before(function() {
         NativeFilter = Array.prototype.filter;
@@ -14,8 +13,8 @@ describe('test basic filter', function() {
         };
     });
 
-    var path = require('path');
-    var filter = require(path.resolve(process.cwd(), 'filter', 'index'));
+    const path = require('path');
+    const filter = require(path.resolve(process.cwd(), 'filter', 'index'));
 
     it('should not use the native filter', function() {
         calledNativeFilter = false;
@@ -26,15 +25,15 @@ describe('test basic filter', function() {
     });
 
     it('basic test', function() {
-        var array = [1, 2, 3];
-        var isEven = function(item) {
+        const array = [1, 2, 3];
+        const isEven = function(item) {
             return item % 2 === 0;
         };
         assert.deepEqual(filter(array, isEven), [2], '基本测试失败');
     });
 
     it('should iterate objects of array', function() {
-        var users = [
+        const users = [
             {
                 'user': 'barney',
                 'age': 36,
@@ -47,7 +46,7 @@ describe('test basic filter', function() {
             }
         ];
 
-        var nonActive = function(item) {
+        const nonActive = function(item) {
             return !item.active;
         };
 

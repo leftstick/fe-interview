@@ -8,7 +8,7 @@
 ### 你的`camelcase`模块应该完成如下功能：
 
 ```javascript
-var camelcase = require('camelcase');
+const camelcase = require('camelcase');
 
 console.log(camelcase('HELLO WORLD')); // helloWorld
 

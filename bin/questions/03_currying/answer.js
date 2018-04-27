@@ -1,25 +1,23 @@
-'use strict';
-
 /**
  *
  *  该模块必须完成以下功能：
  *
- *  var currying = require('currying');
+ *  const currying = require('currying');
  *
- *  var add = function(a, b) {
+ *  const add = function(a, b) {
  *     return a + b;
  *  };
  *
- *  var curried = curry(add);
+ *  const curried = curry(add);
  *  console.log(curried(1)(2)); // 3
  *
  **/
-var currying = function(func) {
-    var len = func.length;
+const currying = function(func) {
+    const len = func.length;
 
-    var getCurry = function(params) {
+    const getCurry = function(params) {
         return function() {
-            var next = params.concat(Array.prototype.slice.call(arguments));
+            const next = params.concat(Array.prototype.slice.call(arguments));
             if (len - next.length <= 0) {
                 return func.apply(this, next);
             }

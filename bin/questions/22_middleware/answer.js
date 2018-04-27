@@ -4,10 +4,10 @@
  *
  *  尝试完成如下功能：
  *
- *  var mw = new Middleware();
+ *  const mw = new Middleware();
  *
  *  mw.use(function(next) {
- *      var self = this;
+ *      const self = this;
  *      setTimeout(function() {
  *          self.hook1 = true;
  *          next();
@@ -15,14 +15,14 @@
  *  });
  *
  *  mw.use(function(next) {
- *      var self = this;
+ *      const self = this;
  *      setTimeout(function() {
  *          self.hook2 = true;
  *          next();
  *      }, 10);
  *  });
  *
- *  var startTime = new Date();
+ *  const startTime = new Date();
  *
  *  mw.start(function() {
  *      console.log(this.hook1); // true
@@ -31,7 +31,7 @@
  *  });
  *
  **/
-var Middleware = function() {
+const Middleware = function() {
     this.pool = [];
 };
 
@@ -40,9 +40,9 @@ Middleware.prototype.use = function(cb) {
 };
 
 Middleware.prototype.start = function(cb) {
-    var _this = this;
+    const _this = this;
 
-    var pullOut = function() {
+    const pullOut = function() {
         if (_this.pool.length === 0) {
             return cb.call(_this);
         }

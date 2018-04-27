@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  *
  *  尝试完成如下功能：
@@ -12,7 +10,7 @@
  *
  *
  **/
-var times = function(n, func) {
+const times = function(n, func) {
     return Array
         .apply([], new Array(n))
         .map(function(item, index) {

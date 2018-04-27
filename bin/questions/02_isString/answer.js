@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  *
  *  尝试完成如下功能：
@@ -12,7 +10,7 @@
  *
  *
  **/
-var isString = function(value) {
+const isString = function(value) {
     return Object.prototype.toString.call(value) === '[object String]';
 };
 

@@ -8,9 +8,9 @@
 ### 你的`removeArray`模块应该完成如下功能：
 
 ```javascript
-var removeArray = require('removeArray');
+const removeArray = require('removeArray');
 
-var arr = [1, 2, 3, 4];
+const arr = [1, 2, 3, 4];
 removeArray(arr, 0);
 console.log(arr); // [2, 3, 4]
 

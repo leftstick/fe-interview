@@ -8,7 +8,7 @@
 ### 你的`times`模块应该完成如下功能：
 
 ```javascript
-var times = require('times');
+const times = require('times');
 
 times(1, String); // ['0']
 

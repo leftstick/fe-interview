@@ -1,23 +1,22 @@
-'use strict';
 
 /**
  *
  *  尝试完成如下功能：
  *
- *  var sayHi = function() {
+ *  const sayHi = function() {
  *      console.log('hi');
  *  };
  *
- *  var throttled1 = throttle(sayHi, 100);
+ *  const throttled1 = throttle(sayHi, 100);
  *
  *  throttled1(); // 只有这里"hi"被真正输出了
  *  throttled1(); // 这次调用因为发生在第一次调用后100ms以内，所以将被忽略
  *
- *  var sayNo = function(){
+ *  const sayNo = function(){
  *      console.log('No!');
  *  };
  *
- *  var throttled2 = throttle(sayNo, 100);
+ *  const throttled2 = throttle(sayNo, 100);
  *
  *  throttled2(); // 这里"No!"被输出了
  *
@@ -25,7 +24,7 @@
  *
  *
  **/
-var throttle = function(func, wait) {
+const throttle = function(func, wait) {
     //在这里实现
 };
 

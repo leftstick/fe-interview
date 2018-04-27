@@ -1,4 +1,3 @@
-'use strict';
 
 /**
  *
@@ -8,7 +7,7 @@
  *  reduce([{name: 'nan', age: 2}, {name: 'fang', age: 3}], function(previous, i){ return previous + i.name;  }, 'Hello ') = Hello nanfeng
  *
  **/
-var reduce = function(arr, func, initialValue) {
+const reduce = function(arr, func, initialValue) {
     //在这里实现
 };
 

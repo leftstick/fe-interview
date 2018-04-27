@@ -1,11 +1,10 @@
-'use strict';
 
-var assert = require('assert');
+const assert = require('assert');
 
 describe('test basic times', function() {
 
-    var path = require('path');
-    var times = require(path.resolve(process.cwd(), 'times', 'index'));
+    const path = require('path');
+    const times = require(path.resolve(process.cwd(), 'times', 'index'));
 
     it('basic test', function() {
         assert.deepEqual(times(2, String), ['0', '1'], '基本测试失败');

@@ -1,14 +1,12 @@
-'use strict';
+const Base = require('../../libs/Base');
+const utils = require('../../libs/Utils');
 
-var Base = require('../../libs/Base');
-var utils = require('../../libs/Utils');
-
-var Question = Base.extend({
+const Question = Base.extend({
     id: 'removeArray',
     name: '请尝试删除数组的指定下标对应的元素',
     prepare: function() {
-        var path = require('path');
-        var index = path.resolve(process.cwd(), this.id, 'index.js');
+        const path = require('path');
+        const index = path.resolve(process.cwd(), this.id, 'index.js');
         if (utils.fileExist(index)) {
             return;
         }

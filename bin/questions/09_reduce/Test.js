@@ -1,10 +1,9 @@
-'use strict';
 
-var assert = require('assert');
+const assert = require('assert');
 
 describe('_.reduce', function() {
 
-    var NativeReduce, calledNativeReduce;
+    let NativeReduce, calledNativeReduce;
 
     before(function() {
         NativeReduce = Array.prototype.reduce;
@@ -14,8 +13,8 @@ describe('_.reduce', function() {
         };
     });
 
-    var path = require('path');
-    var reduce = require(path.resolve(process.cwd(), 'reduce', 'index'));
+    const path = require('path');
+    const reduce = require(path.resolve(process.cwd(), 'reduce', 'index'));
 
     it('should not use the native reduce', function() {
         calledNativeReduce = false;
@@ -26,15 +25,15 @@ describe('_.reduce', function() {
     });
 
     it('basic test', function() {
-        var test = [1, 2, 3];
-        var actual = reduce(test, function(previous, i) {
+        const test = [1, 2, 3];
+        const actual = reduce(test, function(previous, i) {
             return previous + i;
         });
         assert.equal(actual, 6, '基本测试用例失败');
     });
 
     it('test context', function() {
-        var test = [
+        const test = [
             {
                 city: 'Shanghai',
                 population: 25000000
@@ -44,7 +43,7 @@ describe('_.reduce', function() {
                 population: 30000000
             }
         ];
-        var actual = reduce(test, function(previous, i) {
+        const actual = reduce(test, function(previous, i) {
             return previous + i.city + ' ';
         }, 'Hi ');
         assert.equal(actual, 'Hi Shanghai Beijing ', '初始值测试失败');

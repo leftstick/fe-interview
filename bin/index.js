@@ -1,15 +1,13 @@
 #!/usr/bin/env node
 
-'use strict';
-
-var path = require('path');
-var TaskRunner = require('terminal-task-runner');
-var updateNotifier = require('update-notifier');
-var pkg = require('../package.json');
-var commanderRunner = require('./libs/CommanderRunner');
+const path = require('path');
+const TaskRunner = require('terminal-task-runner');
+const updateNotifier = require('update-notifier');
+const pkg = require('../package.json');
+const commanderRunner = require('./libs/CommanderRunner');
 
 // Checks for available update and returns an instance
-var notifier = updateNotifier({
+const notifier = updateNotifier({
     packageName: pkg.name,
     packageVersion: pkg.version,
     updateCheckInterval: 1000 * 60 * 60
@@ -18,7 +16,7 @@ var notifier = updateNotifier({
 notifier.notify();
 
 
-var program = require('commander');
+const program = require('commander');
 
 program
     .version(pkg.version)
@@ -26,7 +24,7 @@ program
     .option('-a, --answer [boolean]', '查阅答案')
     .parse(process.argv);
 
-var options = {
+const options = {
     title: '前端工程师考核',
     subtitle: '本测试主要针对JavaScript部分，涵盖基本语法点、简单算法考核',
     taskDir: path.resolve(__dirname, 'questions'),

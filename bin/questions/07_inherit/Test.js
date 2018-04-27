@@ -1,12 +1,11 @@
-'use strict';
 
-var assert = require('assert');
+const assert = require('assert');
 
 describe('inherit', function() {
 
-    var path = require('path');
-    var Parent = require(path.resolve(process.cwd(), 'inherit', 'Parent'));
-    var Son = require(path.resolve(process.cwd(), 'inherit', 'Son'));
+    const path = require('path');
+    const Parent = require(path.resolve(process.cwd(), 'inherit', 'Parent'));
+    const Son = require(path.resolve(process.cwd(), 'inherit', 'Son'));
 
     it('Parent has prototype method \'getName\'', function() {
         assert(typeof Parent.prototype.getName === 'function', 'Parent类上没定义原型方法getName');

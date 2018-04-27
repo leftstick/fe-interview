@@ -1,15 +1,14 @@
-'use strict';
 
-var assert = require('assert');
+const assert = require('assert');
 
 describe('flatten', function() {
 
-    var path = require('path');
-    var _ = require('lodash');
-    var flatten = require(path.resolve(process.cwd(), 'flatten', 'index'));
+    const path = require('path');
+    const _ = require('lodash');
+    const flatten = require(path.resolve(process.cwd(), 'flatten', 'index'));
 
     it('basic test', function() {
-        var arr = [
+        const arr = [
             1,
             [
                 2,
@@ -25,7 +24,7 @@ describe('flatten', function() {
     });
 
     it('object array', function() {
-        var arr = [
+        const arr = [
             1,
             [
                 {

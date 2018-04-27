@@ -1,4 +1,3 @@
-'use strict';
 
 /**
  *
@@ -13,7 +12,7 @@
  *  console.log(camelcase('hi----you')); // hiYou
  *
  **/
-var camelcase = function(str) {
+const camelcase = function(str) {
     return str.toLowerCase()
         .replace(/(\s+|-+)(.)/g, function(matched, separator, letter) {
             return letter.toUpperCase();

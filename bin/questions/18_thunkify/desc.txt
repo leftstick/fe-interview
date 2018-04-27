@@ -8,9 +8,9 @@
 ### 你的`thunkify`模块应该完成如下功能：
 
 ```javascript
-var thunkify = require('thunkify');
+const thunkify = require('thunkify');
 
-var say = function(name, words, callback){
+const say = function(name, words, callback){
     setTimeout(function(){
         console.log('Hi ' + name + '! ' + words);
         callback({
@@ -19,7 +19,7 @@ var say = function(name, words, callback){
     });
 };
 
-var thunkSay = thunkify(say);
+const thunkSay = thunkify(say);
 
 thunkSay('ZhangSan', 'You are freak.')(function(data){
     console.log(data); // { status: 'FINISHED' }

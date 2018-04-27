@@ -8,11 +8,11 @@
 ### 你的`flatmap`模块应该完成如下功能：
 
 ```javascript
-var flatmap = require('flatmap');
+const flatmap = require('flatmap');
 
-var arr1 = ['a', 'b'];
+const arr1 = ['a', 'b'];
 
-var duplicate = function(x){
+const duplicate = function(x){
     return [x, x];
 };
 

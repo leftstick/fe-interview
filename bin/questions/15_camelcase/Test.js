@@ -1,11 +1,9 @@
-'use strict';
-
-var assert = require('assert');
+const assert = require('assert');
 
 describe('test basic camelcase', function() {
 
-    var path = require('path');
-    var camelcase = require(path.resolve(process.cwd(), 'camelcase', 'index'));
+    const path = require('path');
+    const camelcase = require(path.resolve(process.cwd(), 'camelcase', 'index'));
 
     it('basic test', function() {
         assert.equal(camelcase('helloworld'), 'helloworld', '基本测试失败');

@@ -8,9 +8,9 @@
 ### 你的`di`模块应该完成如下功能：
 
 ```javascript
-var di = require('di');
+const di = require('di');
 
-var app = new di();
+const app = new di();
 
 app.register('duck', {
     fly: function(){

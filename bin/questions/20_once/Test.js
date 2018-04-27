@@ -1,15 +1,15 @@
 'use strict';
 
-var assert = require('assert');
+const assert = require('assert');
 
 describe('test basic once', function() {
 
-    var path = require('path');
-    var once = require(path.resolve(process.cwd(), 'once', 'index'));
+    const path = require('path');
+    const once = require(path.resolve(process.cwd(), 'once', 'index'));
 
     it('basic test', function() {
-        var called = 0;
-        var init = once(function() {
+        let called = 0;
+        const init = once(function() {
             return ++called;
         });
         init();
@@ -19,18 +19,18 @@ describe('test basic once', function() {
     });
 
     it('will return the value from the original call for later calls', function() {
-        var t = 10;
-        var init = once(function() {
+        let t = 10;
+        const init = once(function() {
             return ++t;
         });
-        var ret = init();
+        const ret = init();
         assert.equal(init(), ret, '永远返回首次运行值测试失败');
         assert.equal(init(), ret, '永远返回首次运行值测试失败');
     });
 
     it('gets called with context', function() {
-        var ctx;
-        var init = once(function() {
+        let ctx;
+        const init = once(function() {
             ctx = this;
         });
         init.call('TH');
@@ -39,8 +39,8 @@ describe('test basic once', function() {
     });
 
     it('gets called with arguments', function() {
-        var args;
-        var init = once(function() {
+        let args;
+        const init = once(function() {
             args = [].slice.call(arguments);
         });
         init('hello');
@@ -49,12 +49,12 @@ describe('test basic once', function() {
     });
 
     it('used mulitple times', function() {
-        var t = 0,
+        let t = 0,
             m = 99;
-        var init1 = once(function() {
+        const init1 = once(function() {
             return t++;
         });
-        var init2 = once(function() {
+        const init2 = once(function() {
             return m++;
         });
         init1();

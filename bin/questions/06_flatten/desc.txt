@@ -8,8 +8,8 @@
 ### 你的`flatten`模块应该完成如下功能：
 
 ```javascript
-var flatten = require('flatten');
-var testArr = [1, [2, [3, 4]], 5];
+const flatten = require('flatten');
+const testArr = [1, [2, [3, 4]], 5];
 
 console.log(flatten(testArr));//[1, 2, 3, 4, 5]
 ```

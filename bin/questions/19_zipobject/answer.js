@@ -1,4 +1,3 @@
-'use strict';
 
 /**
  *
@@ -11,7 +10,7 @@
  *
  *
  **/
-var zipobject = function(arr1, arr2) {
+const zipobject = function(arr1, arr2) {
     return arr1.reduce(function(previous, key, index) {
         return (previous[key] = arr2[index]) + '' && previous;
     }, {});

@@ -1,14 +1,12 @@
-'use strict';
-
-var assert = require('assert');
+const assert = require('assert');
 
 describe('duplicate', function() {
 
-    var path = require('path');
-    var duplicate = require(path.resolve(process.cwd(), 'duplicate', 'index'));
+    const path = require('path');
+    const duplicate = require(path.resolve(process.cwd(), 'duplicate', 'index'));
 
     it('basic test', function() {
-        var arr = [
+        const arr = [
             8,
             2,
             16,

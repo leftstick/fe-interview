@@ -1,10 +1,9 @@
-'use strict';
 
-var TaskRunner = require('terminal-task-runner');
-var utils = require('../../libs/Utils');
-var path = require('path');
+const TaskRunner = require('terminal-task-runner');
+const utils = require('../../libs/Utils');
+const path = require('path');
 
-var CopyAnwser = function(id) {
+const CopyAnwser = function(id) {
     if (!utils.fileExist(path.resolve(process.cwd(), id, 'ParentAnswer.js'))) {
         utils.copyFile(path.resolve(__dirname, 'ParentAnswer.js'), path.resolve(process.cwd(), id, 'ParentAnswer.js'));
     }

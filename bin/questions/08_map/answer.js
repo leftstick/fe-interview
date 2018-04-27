@@ -1,4 +1,3 @@
-'use strict';
 
 /**
  *
@@ -9,8 +8,8 @@
  *  map([5, 7], function(i){ return this + i; }, 2)                                              = [7, 9]
  *
  **/
-var map = function(arr, func, ctx) {
-    var array = [];
+const map = function(arr, func, ctx) {
+    const array = [];
 
     arr.forEach(function(i, index) {
         array.push(func.call(ctx, i, index, arr));

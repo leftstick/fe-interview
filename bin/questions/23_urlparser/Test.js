@@ -1,11 +1,9 @@
-'use strict';
-
-var assert = require('assert');
+const assert = require('assert');
 
 describe('test urlparser functionality', function() {
 
-    var path = require('path');
-    var urlparser = require(path.resolve(process.cwd(), 'urlparser', 'index'));
+    const path = require('path');
+    const urlparser = require(path.resolve(process.cwd(), 'urlparser', 'index'));
 
     it('basic test1', function() {
         assert.deepEqual(urlparser('https://web.com'), {

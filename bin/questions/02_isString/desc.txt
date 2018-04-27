@@ -8,7 +8,7 @@
 ### 你的`isString`模块应该完成如下功能：
 
 ```javascript
-var isString = require('isString');
+const isString = require('isString');
 
 console.log(isString('hello')); //true
 console.log(isString(3456)); //false

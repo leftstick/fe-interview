@@ -1,33 +1,31 @@
-'use strict';
-
-var assert = require('assert');
+const assert = require('assert');
 
 describe('test basic difference', function() {
 
-    var path = require('path');
-    var difference = require(path.resolve(process.cwd(), 'difference', 'index'));
+    const path = require('path');
+    const difference = require(path.resolve(process.cwd(), 'difference', 'index'));
 
     it('basic test', function() {
-        var arr1 = ['nan', 'feng', 'hao'];
-        var arr2 = ['aa', 'xiao', 'hao'];
+        const arr1 = ['nan', 'feng', 'hao'];
+        const arr2 = ['aa', 'xiao', 'hao'];
 
-        var res = difference(arr1, arr2);
+        const res = difference(arr1, arr2);
         assert.deepEqual(res, ['nan', 'feng'], '基本测试失败');
     });
 
     it('should match NaN', function() {
-        var arr1 = [1, NaN, 3];
-        var arr2 = [NaN, 5, NaN];
+        const arr1 = [1, NaN, 3];
+        const arr2 = [NaN, 5, NaN];
 
-        var res = difference(arr1, arr2);
+        const res = difference(arr1, arr2);
         assert.deepEqual(res, [1, 3], 'NaN匹配测试失败');
     });
 
     it('should match NaN2', function() {
-        var arr1 = [1, NaN, 3];
-        var arr2 = [5, 'k'];
+        const arr1 = [1, NaN, 3];
+        const arr2 = [5, 'k'];
 
-        var res = difference(arr1, arr2);
+        const res = difference(arr1, arr2);
         assert.equal(res.toString(), '1,NaN,3', 'NaN2匹配测试失败');
     });
 

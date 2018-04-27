@@ -1,14 +1,13 @@
-'use strict';
 
-var assert = require('assert');
+const assert = require('assert');
 
 describe('test di functionality', function() {
 
-    var path = require('path');
-    var Di = require(path.resolve(process.cwd(), 'di', 'index'));
+    const path = require('path');
+    const Di = require(path.resolve(process.cwd(), 'di', 'index'));
 
     it('injecting literal object', function(done) {
-        var app = new Di();
+        const app = new Di();
 
         app.register('duck', {
             fly: function() {
@@ -23,7 +22,7 @@ describe('test di functionality', function() {
     });
 
     it('injecting class', function(done) {
-        var app = new Di();
+        const app = new Di();
 
         app.register('woman', function() {
             this.cry = function() {
@@ -38,7 +37,7 @@ describe('test di functionality', function() {
     });
 
     it('injecting multiple instances', function(done) {
-        var app = new Di();
+        const app = new Di();
 
         app.register('people', function() {
             this.yell = function() {
@@ -60,7 +59,7 @@ describe('test di functionality', function() {
     });
 
     it('injecting nothing', function() {
-        var app = new Di();
+        const app = new Di();
 
         app.register('puppy', function() {
             this.bark = function() {

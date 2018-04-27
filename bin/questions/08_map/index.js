@@ -1,4 +1,3 @@
-'use strict';
 
 /**
  *
@@ -9,7 +8,7 @@
  *  map([5, 7], function(i){ return this + i; }, 2)                                              = [7, 9]
  *
  **/
-var map = function(arr, func, ctx) {
+const map = function(arr, func, ctx) {
     //在这里实现
 };
 

@@ -8,13 +8,13 @@
 ### 你的`shallowCopy`模块应该完成如下功能：
 
 ```javascript
-var shallowCopy = require('shallowCopy');
+const shallowCopy = require('shallowCopy');
 
 console.log(shallowCopy([1, 2, 3])); //[1, 2, 3]
 console.log(shallowCopy({ name: 'hello', value: 23 })); //{ name: 'hello', value: 23 }
 
-var value = [{ name: 'hello', value: 23 }];
-var copied = shallowCopy(value);
+const value = [{ name: 'hello', value: 23 }];
+const copied = shallowCopy(value);
 copied[0].name = 'world';
 console.log(value[0].name); //world
 ```

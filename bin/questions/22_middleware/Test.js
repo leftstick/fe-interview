@@ -1,18 +1,17 @@
-'use strict';
 
-var assert = require('assert');
+const assert = require('assert');
 
 describe('test basic middleware', function() {
 
-    var path = require('path');
-    var Middleware = require(path.resolve(process.cwd(), 'middleware', 'index'));
+    const path = require('path');
+    const Middleware = require(path.resolve(process.cwd(), 'middleware', 'index'));
 
     it('works with a single instance', function(done) {
 
-        var middleware = new Middleware();
+        const middleware = new Middleware();
 
         middleware.use(function(next) {
-            var ctx = this;
+            const ctx = this;
             setTimeout(function() {
                 ctx.first = true;
                 next();
@@ -20,7 +19,7 @@ describe('test basic middleware', function() {
         });
 
         middleware.use(function(next) {
-            var ctx = this;
+            const ctx = this;
             setTimeout(function() {
                 ctx.second = true;
                 next();
@@ -40,11 +39,11 @@ describe('test basic middleware', function() {
 
     it('works with multiple instances', function(done) {
 
-        var middleware1 = new Middleware();
-        var middleware2 = new Middleware();
+        const middleware1 = new Middleware();
+        const middleware2 = new Middleware();
 
         middleware1.use(function(next) {
-            var ctx = this;
+            const ctx = this;
             setTimeout(function() {
                 ctx.first = true;
                 next();
@@ -52,7 +51,7 @@ describe('test basic middleware', function() {
         });
 
         middleware2.use(function(next) {
-            var ctx = this;
+            const ctx = this;
             setTimeout(function() {
                 ctx.second = true;
                 next();

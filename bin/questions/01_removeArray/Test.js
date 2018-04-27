@@ -1,14 +1,12 @@
-'use strict';
-
-var assert = require('assert');
+const assert = require('assert');
 
 describe('duplicate', function() {
 
-    var path = require('path');
-    var removeArray = require(path.resolve(process.cwd(), 'removeArray', 'index'));
+    const path = require('path');
+    const removeArray = require(path.resolve(process.cwd(), 'removeArray', 'index'));
 
     it('delete the first element', function() {
-        var arr = [
+        const arr = [
             'nan',
             'bei',
             'xi',
@@ -19,7 +17,7 @@ describe('duplicate', function() {
     });
 
     it('delete the third element', function() {
-        var arr = [
+        const arr = [
             'nan',
             'bei',
             'xi',
@@ -30,7 +28,7 @@ describe('duplicate', function() {
     });
 
     it('delete the element which doesn\'t exist', function() {
-        var arr = [
+        const arr = [
             'nan',
             'bei',
             'xi',
