@@ -8,7 +8,7 @@
  *     return a + b;
  *  };
  *
- *  const curried = curry(add);
+ *  const curried = currying(add);
  *  console.log(curried(1)(2)); // 3
  *
  **/
