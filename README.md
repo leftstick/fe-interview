@@ -7,6 +7,9 @@ fe-interview
 ![][dt-url]
 ![][license-url]
 
+
+> 该项目已废弃，请转到[js-interview-online](https://github.com/leftstick/js-interview-online)，使用线上版
+
 所谓前端工程师机试工具，希望各公司负责面试的同事能依照国内实际情况给予`pull request`。
 
 > 如大牛提供的[exercises](https://github.com/kolodny/exercises)，就不合适。你很难想象半个多小时，国内能有多少应聘者可以很好的完成这些题目，符合国情，贴近工作需求，才是王道
